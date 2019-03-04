@@ -5,27 +5,36 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<title>FLSU Behavioral Health Bed Board</title>
-	<link rel="shortcut icon" href="media/favicon.ico">
-	<link rel="icon" sizes="16x16 32x32 64x64" href="media/favicon.ico">
-	<link rel="icon" type="image/png" sizes="196x196" href="media/favicon-192.png">
-	<link rel="icon" type="image/png" sizes="160x160" href="media/favicon-160.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96.png">
-	<link rel="icon" type="image/png" sizes="64x64" href="media/favicon-64.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16.png">
-	<link rel="apple-touch-icon" href="media/favicon-57.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="media/favicon-114.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="media/favicon-72.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="media/favicon-144.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="media/favicon-60.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="media/favicon-120.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="media/favicon-76.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="media/favicon-152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="media/favicon-180.png">
+		<link rel="shortcut icon" href="media/favicon.ico">
+		<link rel="icon" sizes="16x16 32x32 64x64" href="media/favicon.ico">
+		<link rel="icon" type="image/png" sizes="196x196" href="media/favicon-192.png">
+		<link rel="icon" type="image/png" sizes="160x160" href="media/favicon-160.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="media/favicon-96.png">
+		<link rel="icon" type="image/png" sizes="64x64" href="media/favicon-64.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="media/favicon-16.png">
+		<link rel="apple-touch-icon" href="media/favicon-57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="media/favicon-114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="media/favicon-72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="media/favicon-144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="media/favicon-60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="media/favicon-120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="media/favicon-76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="media/favicon-152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="media/favicon-180.png">
 	
+	<!-- load styles -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
   	<link rel="stylesheet" type="text/css" href="css/main.css">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  	<!-- initialize scripts -->
+  	 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  	 <script defer type="text/javascript" src="https://mottie.github.io/tablesorter/dist/js/jquery.tablesorter.min.js"></script>
+  	 <script src="https://script.sheetsu.com/"></script>   	
+
 </head>
+
 <body>
 		<div class="blue-bg"></div>
 		<div class="container bh-bed-data animate">
@@ -33,11 +42,11 @@
 	  			<h1>Finger Lakes Behavioral Health Bed Board</h1>
 	  			<p>This is a status board of all of the current number of Behavioral Health beds available for intake in the finger lakes region. Refresh the page to view the most up-to-date information.</p>
 			</div>
-	  		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#GlossaryModal">Glossary of Terms</button>
-	  		<button type="button" class="btn btn-secondary" value="Refresh Page" onClick="window.location.reload()">Refresh Content</button>
+	  		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#GlossaryModal">Glossary of Terms <i class="fas fa-bars"></i></button>
+	  		<button type="button" class="btn btn-secondary" value="Refresh Page" onClick="window.location.reload()">Refresh  <i class="fas fa-sync-alt"></i></button>
 	        
 	        <!-- ---------- Desktop Data ---------- -->
-			<table class="table table-striped animate">
+			<table id="bh-table" class="table table-striped animate tablesorter">
 			    <thead>
 			    	<tr class="bhd-top-header">
 				        <th colspan="3"> </th>
@@ -56,27 +65,28 @@
 			        	<th class="text-center">Last Updated</th>
 			      	</tr>
 			    </thead>
-
-			    <tbody sheetsu="https://sheetsu.com/apis/v1.0bu/0a1c9d829dfe">
-			      	<tr class="bhd-row">
-			        	<td><strong>{{OrganizationName}}</strong><br>Hours: {{Hours}}<br>Phone: {{Phone}}<br><br><strong>Intake Contact:</strong> {{Intake Contact}}<br>Phone: {{Contact Phone}}</td>
-			        	<td class="text-center">{{County}}</td>
-			        	<td class="text-center">{{BedType}}</td>
-			        	<td class="has-border text-center">{{OpenBedMALE}}</td>
-			        	<td class="text-center">{{OpenBedFEMALE}}</td>
-			        	<td class="has-border text-center">{{HoldBedMALE}}</td>
-			        	<td class="text-center">{{HoldBedFEMALE}}</td>
-			        	<td class="has-border text-center">{{Updated}}</td>
-			      	</tr>
-			    </tbody>
+				
+				<tbody id="bh-table-body"></tbody>
+				<script>
+				    function successFunc(data) {
+				      data.forEach(function(item, i) {
+				        document.getElementById("bh-table-body").innerHTML += "<tr class=\"bhd-row\"><td><strong>" + item.OrganizationName + "</strong><br>" + item.ProgramName + "<br>Hours: " + item.Hours + "<br>Phone: " + item.Phone + "<br><br><strong>Intake Contact:</strong> " + item.IntakeContact + "<br>Phone: " + item.ContactPhone + "</td><td class=\"text-center\">" + item.County + "</td><td class=\"text-center\">" + item.BedType + "</td><td class=\"has-border text-center\">" + item.OpenBedMALE + "</td><td class=\"text-center\">" + item.OpenBedFEMALE + "</td><td class=\"has-border text-center\">" + item.HoldBedMALE + "</td><td class=\"text-center\">" + item.HoldBedFEMALE + "</td><td class=\"has-border text-center\">" + item.Updated;
+				      });
+				    }
+				    function errorFunc(e) {
+				      console.log(e);
+				    }
+				    Sheetsu.read("https://sheetsu.com/apis/v1.0bu/0a1c9d829dfe", {}).then(successFunc, errorFunc);
+				  </script>		
 			</table>
+
 			<!-- ---------- End Desktop Data ---------- -->
 
 			<!-- ---------- Mobile Card ---------- -->
 			<div class="row bhdm animate">
 				<div sheetsu="https://sheetsu.com/apis/v1.0bu/0a1c9d829dfe" class="col bhdm-col">
 					<div class="bh-card">
-					    <div class="bhdm-org-name">{{OrganizationName}}</div>
+					    <div class="bhdm-org-name">{{OrganizationName}}<br>{{ProgramName}}</div>
 					    <div class="bhdm-org-hours">Hours: {{Hours}}</div>
 					    <div class="bhdm-org-phone">Phone: {{Phone}}</div>
 					    <div class="bhdm-org-county">County: {{County}}</div>
@@ -103,6 +113,13 @@
 	<div class="text-muted text-small rrh-footer">
 		<img src="https://s26670.pcdn.co/wp-content/uploads/2018/05/RRH_Logo_BlackBlue_SMALL.png" alt="Rochester Regional Health Logo">
 		<p><small>Copyright 2019. Rochester Regional Health. All Rights Reserved.</small></p>
+		<ul class="rrh-footer-links text-small">
+			<li><a href="https://www.rochesterregional.org/physician-directory?q&sortBy=alpha&sortOrder=asc&page=1">Find A Doctor</a></li>
+			<li><a href="https://www.rochesterregional.org/services?q&sortBy=relevance&sortOrder=asc&page=1">Services</a></li>
+			<li><a href="https://www.rochesterregional.org/disclaimer">Disclaimer</a></li>
+			<li><a href="https://www.rochesterregional.org/privacy-notice">Privacy Notice</a></li>
+			<li><a href="https://careers.rochesterregional.org/">Careers</a></li>
+		</ul>
 	</div>
 
 
@@ -132,13 +149,33 @@
 	</div>
 	<!-- ---------- End Modal ---------- -->
 	
-  	<script src="https://load.sheetsu.com"></script>
-  	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
-	<script type="text/javascript">if (location.protocol !== "https:") {
+
+	<script type="text/javascript">		
+		function FetchTable() {
+	    $('#bh-table').tablesorter({
+			tableClass: 'tablesorter',
+		    cssAsc: "tablesorter-headerSortUp",
+		    cssDesc: "tablesorter-headerSortDown",
+		    cssHeader: "tablesorter-header",
+		    cssHeaderRow: "tablesorter-headerRow",
+		    cssIcon: "tablesorter-icon",
+		    cssChildRow: "tablesorter-childRow",
+		    cssInfoBlock: "tablesorter-infoOnly",
+		    cssProcessing: "tablesorter-processing",
+		})
+	};
+	setTimeout(FetchTable,2500);
+	</script>
+
+<script src="https://load.sheetsu.com"></script>
+	<!-- <script type="text/javascript">if (location.protocol !== "https:") {
   location.protocol = "https:";
-}</script>
+}</script> -->
 </body>
 </html>
 

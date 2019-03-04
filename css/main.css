@@ -1,7 +1,6 @@
 
 		/* Fonts */
 		@import url('https://fonts.googleapis.com/css?family=Rubik:400,700');
-		@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 
 		/* Reset */
   			body {background: #fafafa;}
@@ -23,17 +22,15 @@
 			.hold-beds-column {padding-left: 3px;}
 			.table td, .table th {vertical-align: middle;}
 			.has-border {border-left: 1px solid #e0e0e0;}
-			button i {margin-left: 8px;}
-			.btn-primary {background: #0077c8; border: 1px solid #0077c8; margin-bottom: 30px; padding: 8px 15px 8px 25px;}
+			.btn-primary {background: #0077c8; border: 1px solid #0077c8; margin-bottom: 30px; padding: 8px 25px;}
 			.btn-primary:hover {background: #fff; color: #0077c8; border: 1px solid #0077c8;}
 
-			.btn-secondary {background: #fff; color: #0077c8; border: 1px solid #0077c8; margin-bottom: 30px; padding: 8px 15px 8px 25px;}
+			.btn-secondary {background: #fff; color: #0077c8; border: 1px solid #0077c8; margin-bottom: 30px; padding: 8px 25px;}
 			.btn-secondary:hover {background: #0077c8; color: #fff; border: 1px solid #0077c8;}
 			.blue-bg {background: #0077c8; height: 400px;}
 			.bhd-page-title {width: 90%; max-width: 836px; margin-bottom: 30px;}
 			.table thead th {border-bottom: none;}
 			.table td, .table th {border-top: none;}
-
 		/* END */
 
 		/* Behavioral Health Data (bhd) Fields */
@@ -55,13 +52,7 @@
 		/* footer */
 			.rrh-footer {margin: auto; width: 100%; max-width: 500px; text-align: center; margin-top: 50px;}
 			.rrh-footer img {width: 100%; max-width: 150px;}
-			.rrh-footer p {margin: 20px auto 0 auto; line-height: 1em;}
-			ul.rrh-footer-links {padding: 0px; margin-bottom: 40px;}
-			.rrh-footer-links li {display: inline; font-size: 60%; padding: 0 4px;}
-			.rrh-footer-links li a {color: #6c757d;}
-			.rrh-footer-links li:first-of-type {padding-left: 0;}
-			.rrh-footer-links li:last-of-type {padding-right: 0;}
-
+			.rrh-footer p {margin: 20px; line-height: 1em;}
 
 		/* Animations */
 			@-webkit-keyframes animate {0% {opacity: 0}to {opacity: 1}}
@@ -75,50 +66,6 @@
     			animation-duration: 1s;
     			animation-fill-mode: both
 			}
-
-		/* table arrow filters */
-			.tablesorter-header-inner {
-				display: inline;
-			}
-
-			.tablesorter .header:after, 
-			.tablesorter .tablesorter-header:after {
-				font-family: 'Font Awesome 5 Free';
-			  content: "\f0dc";
-			  float: right;
-			  font-size: 12px;
-			  padding-top: 5px;
-			  margin-left: 5px;
-			  color: #b3b3b3;
-			}
-			.tablesorter .headerSortUp:after, 
-			.tablesorter .tablesorter-headerSortUp:after, 
-			.tablesorter .tablesorter-headerAsc:after {
-				font-family: 'Font Awesome 5 Free';
-			  content: "\f0de";
-			  float: right; 
-			  font-size: 12px;
-			  padding-top: 5px;
-			  margin-left: 5px;
-			  color: #b3b3b3;
-			}
-			.tablesorter .headerSortDown:after, 
-			.tablesorter .tablesorter-headerSortDown:after, 
-			.tablesorter .tablesorter-headerDesc:after {
-				font-family: 'Font Awesome 5 Free';
-			  content: "\f0dd";
-			  float: right; 
-			  font-size: 12px;
-			  padding-top: 5px;
-			  margin-left: 5px;
-			  color: #b3b3b3;
-			}
-
-			tr.bhd-top-header.tablesorter-headerRow th:after {
-			    content: '';
-			    cursor: default;
-			}
-
 
 		 /* Media Queries */
   		@media screen and (max-width: 991px) {

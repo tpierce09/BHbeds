@@ -31,7 +31,6 @@
   	<!-- initialize scripts -->
   	 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   	 <script defer src="https://mottie.github.io/tablesorter/dist/js/jquery.tablesorter.min.js"></script>
-  	 <script src="https://script.sheetsu.com/"></script>   	
 
 </head>
 
@@ -65,19 +64,18 @@
 			        	<th class="text-center">Last Updated</th>
 			      	</tr>
 			    </thead>
-				
-				<tbody id="bh-table-body"></tbody>
-				<script>
-				    function successFunc(data) {
-				      data.forEach(function(item, i) {
-				        document.getElementById("bh-table-body").innerHTML += "<tr class=\"bhd-row\"><td><strong>" + item.OrganizationName + "</strong><br>" + item.ProgramName + "<br>Hours: " + item.Hours + "<br>Phone: " + item.Phone + "<br><br><strong>Intake Contact:</strong> " + item.IntakeContact + "<br>Phone: " + item.ContactPhone + "</td><td class=\"text-center\">" + item.County + "</td><td class=\"text-center\">" + item.BedType + "</td><td class=\"has-border text-center\">" + item.OpenBedMALE + "</td><td class=\"text-center\">" + item.OpenBedFEMALE + "</td><td class=\"has-border text-center\">" + item.HoldBedMALE + "</td><td class=\"text-center\">" + item.HoldBedFEMALE + "</td><td class=\"has-border text-center\">" + item.Updated;
-				      });
-				    }
-				    function errorFunc(e) {
-				      console.log(e);
-				    }
-				    Sheetsu.read("https://sheetsu.com/apis/v1.0bu/0a1c9d829dfe", {}).then(successFunc, errorFunc);
-				  </script>		
+				<tbody sheetsu="https://sheetsu.com/apis/v1.0bu/0a1c9d829dfe">
+			      <tr class="bhd-row">
+			        <td><strong>{{OrganizationName}}</strong><br>Hours: {{Hours}}<br>Phone: {{Phone}}<br><br><strong>Intake Contact:</strong> {{IntakeContact}}<br>Phone: {{ContactPhone}}</td>
+			        <td class="text-center">{{County}}</td>
+			        <td class="text-center">{{BedType}}</td>
+			        <td class="has-border text-center">{{OpenBedMALE}}</td>
+			        <td class="text-center">{{OpenBedFEMALE}}</td>
+			        <td class="has-border text-center">{{HoldBedMALE}}</td>
+			        <td class="text-center">{{HoldBedFEMALE}}</td>
+			        <td class="has-border text-center">{{Updated}}</td>
+			      </tr>
+			    </tbody>
 			</table>
 
 			<!-- ---------- End Desktop Data ---------- -->
@@ -169,7 +167,7 @@
 		    cssProcessing: "tablesorter-processing",
 		})
 	};
-	setTimeout(FetchTable,2550);
+	setTimeout(FetchTable,2850);
 
 	if (location.protocol !== "https:") {location.protocol = "https:";}
 	</script>

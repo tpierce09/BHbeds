@@ -40,6 +40,8 @@
 			.bhd-open-title {background: #0077c8; color: #fff; padding: 8px;}
   			.bhd-hold-title {background: #84c7d6; color: #fff;}
   			.bhd-top-header th {border: 0px solid #fff; text-align: center; padding: 0px;}
+  			.bhd-row a, .bhdm-org-name a {color: #0077c8; transition: all .3s ease;}
+  			.bhd-row a:hover, .bhdm-org-name a:hover {color: #000;}
 		/* END */
 
 		/* Behavioral Health Data Mobile (bhdm) Fields */

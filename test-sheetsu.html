@@ -66,14 +66,14 @@
 			    </thead>
 				<tbody sheetsu="https://sheetsu.com/apis/v1.0bu/0a1c9d829dfe">
 			      <tr class="bhd-row">
-			        <td><strong>{{OrganizationName}}</strong><br>Hours: {{Hours}}<br>Phone: {{Phone}}<br><br><strong>Intake Contact:</strong> {{IntakeContact}}<br>Phone: {{ContactPhone}}</td>
+			        <td><strong><a href="{{OrganizationLink}}" target="_blank">{{OrganizationName}}</a></strong><br>{{ProgramName}}<br>{{Hours}}<br><br><strong>Intake Contact:</strong> {{IntakeContact}}<br>Phone: {{ContactPhone}}</td>
 			        <td class="text-center">{{County}}</td>
 			        <td class="text-center">{{BedType}}</td>
 			        <td class="has-border text-center">{{OpenBedMALE}}</td>
 			        <td class="text-center">{{OpenBedFEMALE}}</td>
 			        <td class="has-border text-center">{{HoldBedMALE}}</td>
 			        <td class="text-center">{{HoldBedFEMALE}}</td>
-			        <td class="has-border text-center">{{Updated}}</td>
+			        <td class="has-border text-center">{{UpdatedDate}}<br>{{UpdatedTime}}</td>
 			      </tr>
 			    </tbody>
 			</table>
@@ -84,7 +84,7 @@
 			<div class="row bhdm animate">
 				<div sheetsu="https://sheetsu.com/apis/v1.0bu/0a1c9d829dfe" class="col bhdm-col">
 					<div class="bh-card">
-					    <div class="bhdm-org-name">{{OrganizationName}}<br>{{ProgramName}}</div>
+					    <div class="bhdm-org-name"><a href="{{OrganizationLink}}" target="_blank">{{OrganizationName}}</a><br>{{ProgramName}}</div>
 					    <div class="bhdm-org-hours">Hours: {{Hours}}</div>
 					    <div class="bhdm-org-phone">Phone: <a href="tel:+{{Phone}}">{{Phone}}</a></div>
 					    <div class="bhdm-org-county">County: {{County}}</div>
@@ -101,7 +101,7 @@
 							     	<span class="bhdm-data"><strong>Female</strong><br> {{HoldBedFEMALE}}</span>
 							    </div>
 						    </div>
-						<div class="bhdm-update">Last Updated: {{Updated}}</div>
+						<div class="bhdm-update">Last Updated: {{UpdatedTime}}, {{UpdatedDate}}</div>
 					</div>
 				</div>					   
 			</div>
@@ -166,9 +166,9 @@
 		    cssProcessing: "tablesorter-processing",
 		})
 	};
-	setTimeout(FetchTable,3050);
+	setTimeout(FetchTable,3550);
 
-	if (location.protocol !== "https:") {location.protocol = "https:";}
+	// if (location.protocol !== "https:") {location.protocol = "https:";}
 	</script>
 
 

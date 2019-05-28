@@ -52,7 +52,7 @@
 	<script id="item-template-desk" type="text/x-handlebars-template">
 		{{#each this}}
 			<tr class="bhd-row">
-				<td><strong><a href="{{organizationLink}}"target="_blank">{{organizationName}}</a></strong><br>{{programName}}<br><small>{{bedTypeName}}</small><br><br><strong>Intake Contact:</strong> {{intakeContact}}<br><strong>Phone: </strong>{{phone}}</td>
+				<td><strong><a href="{{organizationLink}}"target="_blank">{{organizationName}}</a></strong><br>{{programName}}<br>{{bedTypeName}}<br><small>{{description}}</small><br><br><strong>Intake Contact:</strong> {{intakeContact}}<br><strong>Phone: </strong>{{phone}}</td>
 				<td class="text-center">{{county}}</td>
 				<td class="text-center">{{bedType}}</td>
 				<td class="has-border text-center">{{openBedMALE}}</td>
@@ -66,7 +66,7 @@
 	<script id="item-template-mobile" type="text/x-handlebars-template">
 		{{#each this}}
 			<div class="bh-card">
-				<div class="bhdm-org-name"><a href="{{organizationLink}}" target="_blank">{{organizationName}}</a><br>{{programName}}<br><small>{{bedTypeName}}</small><br><br></div>
+				<div class="bhdm-org-name"><a href="{{organizationLink}}" target="_blank">{{organizationName}}</a><br>{{programName}}<br> {{bedTypeName}}<br><small>{{description}}</small><br><br></div>
 				<div class="bhdm-org-hours">Hours: {{hours}}</div>
 				<div class="bhdm-org-phone">Phone: <a href="tel:+{{phone}}">{{phone}}</a></div>
 				<div class="bhdm-org-county">County: {{county}}</div>

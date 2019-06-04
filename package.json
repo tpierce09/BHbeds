@@ -1,0 +1,22 @@
+{
+  "name": "bh-beds",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://tpierce09@github.com/tpierce09/BHbeds.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tpierce09/BHbeds/issues"
+  },
+  "homepage": "https://github.com/tpierce09/BHbeds#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}

@@ -12,8 +12,8 @@
   			.modal-content {border: 0px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,.15); padding: 15px;}
   			.modal-backdrop {background: white; opacity: 1;}
   			div#GlossaryModal {background: rgba(255,255,255,.9);}
-			.modal-p {margin-bottom: .7rem;border-bottom: 1px solid #f5f5f5;padding-bottom: 1rem;}
-			.modal-p img {float: right;}
+			.modal__desc {margin-bottom: .7rem;border-bottom: 1px solid #f5f5f5;padding-bottom: 1rem;}
+			.modal-body h4 {font-weight: 700;}
 			.modal-header, .modal-footer {border: 0px;}
 			.modal-title {margin-bottom: 0;line-height: 1.5;font-family: 'Rubik', sans-serif;font-weight: 700;}
 			

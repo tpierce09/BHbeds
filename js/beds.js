@@ -25,5 +25,5 @@ function FetchTable() {
 		};
 setTimeout(FetchTable,1450);
 
-if (location.protocol !== "https:") {location.protocol = "https:";}
+// if (location.protocol !== "https:") {location.protocol = "https:";}
 

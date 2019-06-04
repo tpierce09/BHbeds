@@ -175,3 +175,24 @@
 </body>
 </html>
 
+<style>
+	.bed--title a {display: block; font-size: 18px; font-weight: 700; color: #0077c8}
+	.bed--title a:hover {color: #000;}
+	.bed--bed-type {display: block;}
+	.bed--description {display: block; font-size: 12px; margin: 5px 0 15px 0}
+	.bed--contact-email {display: block;}
+	.bed--contact-email a {color: #0077c8}
+	.bed--contact-email a:hover {color: #000;}
+	.bold {font-weight: 700;}
+</style>
+
+
+<tr class="bhd-row bed">
+	<td>
+		<span class="bed--title"><a href="{{organizationLink}}"target="_blank">{{organizationName}}</a></span>
+		<span class="bed--bed-type">{{bedTypeName}}</span>
+		<span class="bed--description">{{description}}</span>
+		<span class="bed--contact-email"><span class="bold">Intake Contact:</span> <a href="mailto:{{emailAddress}}">{{intakeContact}}</a></span>
+		<span class="bed--contact-phone"><span class="bold">Phone:</span> {{phone}}</span>
+	</td>
+</tr>

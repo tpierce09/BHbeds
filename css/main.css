@@ -1,69 +1,82 @@
-
 		/* Fonts */
 		@import url('https://fonts.googleapis.com/css?family=Rubik:400,700');
 		@import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 
 		/* Reset */
-  			body {background: #fafafa;}
-  			table {width: 100%; animation-delay: .8s;}
-  			h1 {font-family: 'Rubik', sans-serif; font-weight: 700; transition: font-size .5s ease; transition-delay: .4s}
-  			.bhd-page-title p {transition: font-size .5s ease; transition-delay: .4s}
-  			.bh-bed-data {background: #fff; margin-top: -300px; padding: 30px;box-shadow: 0 1px 7px rgba(0,0,0,.05); border-radius: 5px; animation-delay: .3s;}
+  			body {background: #fafafa;}	
+  			.container--bed {background: #fff; margin-top: -300px; padding: 30px;box-shadow: 0 1px 7px rgba(0,0,0,.05); border-radius: 5px; animation-delay: .3s;}
+  			.title-block {width: 90%; max-width: 836px; margin-bottom: 30px;}
+  			.title-block__header {font-family: 'Rubik', sans-serif; font-weight: 700; transition: font-size .5s ease; transition-delay: .4s}
+  			.title-block__desc {transition: font-size .5s ease; transition-delay: .4s}
   			.modal-dialog {max-width: 700px;}
   			.modal-content {border: 0px; border-radius: 5px; box-shadow: 0 2px 10px rgba(0,0,0,.15); padding: 15px;}
   			.modal-backdrop {background: white; opacity: 1;}
   			div#GlossaryModal {background: rgba(255,255,255,.9);}
 			.modal-p {margin-bottom: .7rem;border-bottom: 1px solid #f5f5f5;padding-bottom: 1rem;}
 			.modal-p img {float: right;}
-			.close {float: right;font-size: 2.5rem;font-weight: 400;line-height: 1;color: #000;text-shadow: none;opacity: 1;}
 			.modal-header, .modal-footer {border: 0px;}
 			.modal-title {margin-bottom: 0;line-height: 1.5;font-family: 'Rubik', sans-serif;font-weight: 700;}
-  			.bh-card {border: 1px solid #84c7d6; border-radius: 5px; margin-bottom: 15px; padding: 20px;}
-			.open-beds-column {padding-right: 3px;}
-			.hold-beds-column {padding-left: 3px;}
-			.table td, .table th {vertical-align: middle;}
+			
+			.bg--blue {background: #0077c8; height: 400px;}
+			.close {float: right;font-size: 2.5rem;font-weight: 400;line-height: 1;color: #000;text-shadow: none;opacity: 1;}
 			.has-border {border-left: 1px solid #e0e0e0;}
+			.is-bold {font-weight: 700;}			
+		/* END */
+
+		/* Buttons */
+			.btn--primary {background: #0077c8; color: #fff; border: 1px solid #0077c8; margin-bottom: 30px; padding: 8px 15px 8px 25px;}
+			.btn--primary:hover {background: #fff; color: #0077c8; border: 1px solid #0077c8;}
+			.btn--secondary {background: #fff; color: #0077c8; border: 1px solid #0077c8; margin-bottom: 30px; padding: 8px 15px 8px 25px;}
+			.btn--secondary:hover {background: #0077c8; color: #fff; border: 1px solid #0077c8;}
 			button i {margin-left: 8px;}
-			.btn-primary {background: #0077c8; border: 1px solid #0077c8; margin-bottom: 30px; padding: 8px 15px 8px 25px;}
-			.btn-primary:hover {background: #fff; color: #0077c8; border: 1px solid #0077c8;}
-
-			.btn-secondary {background: #fff; color: #0077c8; border: 1px solid #0077c8; margin-bottom: 30px; padding: 8px 15px 8px 25px;}
-			.btn-secondary:hover {background: #0077c8; color: #fff; border: 1px solid #0077c8;}
-			.blue-bg {background: #0077c8; height: 400px;}
-			.bhd-page-title {width: 90%; max-width: 836px; margin-bottom: 30px;}
-			.table thead th {border-bottom: none;}
-			.table td, .table th {border-top: none;}
-
+			
 		/* END */
 
 		/* Behavioral Health Data (bhd) Fields */
-			.bhd-open-title {background: #0077c8; color: #fff; padding: 8px;}
-  			.bhd-hold-title {background: #84c7d6; color: #fff;}
-  			.bhd-top-header th {border: 0px solid #fff; text-align: center; padding: 0px;}
-  			.bhd-row a, .bhdm-org-name a {color: #0077c8; transition: all .3s ease;}
-  			.bhd-row a:hover, .bhdm-org-name a:hover {color: #000;}
+			.bed-table {width: 100%; animation-delay: .8s;}
+			.bed-table thead th {border-bottom: none;}
+			.bed-table td, .bed-table th {vertical-align: middle;}
+			.bed-table th {padding: .75rem;}
+			.bed-table td {padding: 1.25rem;}
+			.bed-table td, .bed-table th {vertical-align: middle; border-top: none;}
+			.bed-table__open {background: #0077c8; color: #fff; padding: 8px;}
+  			.bed-table__hold {background: #84c7d6; color: #fff;}
+  			.bed-table__header th {border: 0px solid #fff; text-align: center; padding: 0px;}
+  			.bed__title a {display: block; font-size: 18px; font-weight: 700; color: #0077c8}
+			.bed__title a:hover {color: #000;}
+			.bed__bed-type {display: block;}
+			.bed__description {display: block; font-size: 12px; margin: 5px 0 15px 0}
+			.bed__contact-email {display: block;}
+			.bed__contact-email a {color: #0077c8}
+			.bed__contact-email a:hover {color: #000;}
 		/* END */
 
 		/* Behavioral Health Data Mobile (bhdm) Fields */
-			.bhdm {display: none;}
-			.bhdm-org-name {font-weight: bold;}
-			.bhdm-org-hours, .bhdm-org-phone, .bhdm-org-county {opacity: .8;} 
-			.bhdm-data {display: inline-block; width: 48.5%; text-align: center; background: #f5f5f5;}
-			.bhdm-open-title {background: #0077c8; color: #fff; font-weight: bold; padding: 4px; margin-top: 10px; text-align: center; display: block; font-size: 14px;}
-  			.bhdm-hold-title {background: #84c7d6; color: #fff; font-weight: bold; padding: 4px; margin-top: 10px; text-align: center; font-size: 14px;}
-  			.bhdm-update {font-size: 12px; margin-top: 10px; font-style: italic; opacity: .7}
+			.bed-org {border: 1px solid #84c7d6; border-radius: 5px; margin-bottom: 15px; padding: 20px; display: none;}
+			.bed-org a {font-weight: bold; color: #0077c8;}
+			.bed-org a:hover {color: #000;}
+			.bed-org__program {display: block; font-weight: bold;}
+			.bed-org__bed-type {display: block; font-weight: bold;}
+			.bed-org__open-col {padding-right: 3px;}
+			.bed-org__hold-col {padding-left: 3px;}	
+			.bed-org__description {display: block; font-size: 12px; margin: 5px 0 10px 0;}
+			.bed-org__hours, .bed-org__phone, .bed-org__county {opacity: .8; font-size: 14px;} 
+			.bed-org__data {display: inline-block; width: 48.5%; text-align: center; background: #f5f5f5;}
+			.bed-org__open {background: #0077c8; color: #fff; font-weight: bold; padding: 4px; margin-top: 10px; text-align: center; display: block; font-size: 14px;}
+  			.bed-org__hold {background: #84c7d6; color: #fff; font-weight: bold; padding: 4px; margin-top: 10px; text-align: center; font-size: 14px;}
+  			.bed-org__update {font-size: 12px; margin-top: 10px; font-style: italic; opacity: .7}
 		/* END */
 
 		/* footer */
 			.rrh-footer {margin: auto; width: 100%; max-width: 500px; text-align: center; margin-top: 50px;}
 			.rrh-footer img {width: 100%; max-width: 150px;}
 			.rrh-footer p {margin: 20px auto 0 auto; line-height: 1em;}
-			ul.rrh-footer-links {padding: 0px; margin-bottom: 40px;}
-			.rrh-footer-links li {display: inline; font-size: 60%; padding: 0 4px;}
-			.rrh-footer-links li a {color: #6c757d;}
-			.rrh-footer-links li:first-of-type {padding-left: 0;}
-			.rrh-footer-links li:last-of-type {padding-right: 0;}
-
+			.rrh-footer__links {padding: 0px; margin-bottom: 40px;}
+			.rrh-footer__links li {display: inline; font-size: 60%; padding: 0 4px;}
+			.rrh-footer__links li a {color: #6c757d;}
+			.rrh-footer__links li:first-of-type {padding-left: 0;}
+			.rrh-footer__links li:last-of-type {padding-right: 0;}
+		/* END */
 
 		/* Animations */
 			@-webkit-keyframes animate {0% {opacity: 0}to {opacity: 1}}
@@ -116,7 +129,7 @@
 			  color: #b3b3b3;
 			}
 
-			tr.bhd-top-header.tablesorter-headerRow th:after {
+			tr.bed-table__header.tablesorter-headerRow th:after {
 			    content: '';
 			    cursor: default;
 			}
@@ -124,18 +137,18 @@
 
 		 /* Media Queries */
   		@media screen and (max-width: 991px) {
-  			table {display: none;}
-  			.bhdm {display: block; background: #fff;}
-  			.bh-bed-data {padding: 15px; margin-top: -200px;}
+  			.bed-table {display: none;}
+  			.bed-org {display: block; background: #fff;}
+  			.container--bed {padding: 15px; margin-top: -200px;}
   			.btn {margin-bottom: 20px;}
-  			.blue-bg {height: 300px;}
+  			.bg--blue {height: 300px;}
   			
 
 		@media screen and (max-width: 575px) {
-			.blue-bg {display: none;}
-			.bh-bed-data {margin-top: 0px; padding-top: 35px;}
-			.h1, h1 {font-size: 1.8rem;}
-  			.bhd-page-title p {font-size: .8em;}
+			.bg--blue {display: none;}
+			.container--bed {margin-top: 0px; padding-top: 35px;}
+			.title-block__header {font-size: 1.8rem;}
+  			.title-block__desc {font-size: .8em;}
 		}
 
 		@media (prefers-reduced-motion) {

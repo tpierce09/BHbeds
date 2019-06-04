@@ -32,27 +32,20 @@
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
   	<!-- initialize scripts -->
-  	 <script src="js/jquery-3.3.1.min.js"></script>
+  	 <script src="js/jquery.min.js"></script>
+  	 <script type="text/javascript" src="js/beds.js"></script>
 	 <script src="js/handlebars-v4.1.1.js"></script>
-	 <script defer src="https://mottie.github.io/tablesorter/dist/js/jquery.tablesorter.min.js"></script>
-
-
-	<script type="text/javascript">
-	$(document).ready(function(){
-		$.getJSON('https://api.sheety.co/8e7bb733-230c-4d61-a9ce-18e0350a15e4', function(data) {
-			var template = Handlebars.compile($('#item-template-desk').html())
-			$('#items-desk').html(template(data));
-		})
-		$.getJSON('https://api.sheety.co/8e7bb733-230c-4d61-a9ce-18e0350a15e4', function(data) {
-			var template = Handlebars.compile($('#item-template-mobile').html())
-			$('#items-mobile').html(template(data));
-		})
-	})
-	</script>
+	 
 	<script id="item-template-desk" type="text/x-handlebars-template">
 		{{#each this}}
-			<tr class="bhd-row">
-				<td><strong><a href="{{organizationLink}}"target="_blank">{{organizationName}}</a></strong><br>{{programName}}<br>{{bedTypeName}}<br><small>{{description}}</small><br><br><strong>Intake Contact:</strong> {{intakeContact}}<br><strong>Phone: </strong>{{phone}}</td>
+			<tr class="bed">
+				<td>
+					<span class="bed__title"><a href="{{organizationLink}}"target="_blank">{{organizationName}}</a></span>
+					<span class="bed__bed-type">{{bedTypeName}}</span>
+					<span class="bed__description">{{description}}</span>
+					<span class="bed__contact-email"><span class="is-bold">Intake Contact:</span> <a href="mailto:{{emailAddress}}">{{intakeContact}}</a></span>
+					<span class="bed__contact-phone"><span class="is-bold">Phone:</span> {{phone}}</span>
+				</td>
 				<td class="text-center">{{county}}</td>
 				<td class="text-center">{{bedType}}</td>
 				<td class="has-border text-center">{{openBedMALE}}</td>
@@ -63,49 +56,54 @@
 			</tr>
 		{{/each}}
 	</script>
+
 	<script id="item-template-mobile" type="text/x-handlebars-template">
 		{{#each this}}
-			<div class="bh-card">
-				<div class="bhdm-org-name"><a href="{{organizationLink}}" target="_blank">{{organizationName}}</a><br>{{programName}}<br> {{bedTypeName}}<br><small>{{description}}</small><br><br></div>
-				<div class="bhdm-org-hours">Hours: {{hours}}</div>
-				<div class="bhdm-org-phone">Phone: <a href="tel:+{{phone}}">{{phone}}</a></div>
-				<div class="bhdm-org-county">County: {{county}}</div>
+			<div class="bed-org">
+				<a href="{{organizationLink}}" target="_blank">{{organizationName}}</a>
+				<div class="bed-org__program">{{programName}}</div>
+				<div class="bed-org__bed-type">{{bedTypeName}}</div>
+				<div class="bed-org__description">{{description}}</div>
+				<div class="bed-org__hours">Hours: {{hours}}</div>
+				<div class="bed-org__phone">Phone: <a href="tel:+{{phone}}">{{phone}}</a></div>
+				<div class="bed-org__county">County: {{county}}</div>
 					<div class="row">
-						<div class="col-6 open-beds-column">
-							<span class="bhdm-open-title">Open Beds</span>
-							<span class="bhdm-data"><strong>Male</strong><br> {{openBedMALE}}</span>
-							<span class="bhdm-data"><strong>Female</strong><br> {{openBedFEMALE}}</span>
+						<div class="col-6 bed-org__open-col">
+							<span class="bed-org__open">Open Beds</span>
+							<span class="bed-org__data"><strong>Male</strong><br> {{openBedMALE}}</span>
+							<span class="bed-org__data"><strong>Female</strong><br> {{openBedFEMALE}}</span>
 						</div>
 
-						<div class="col-6 hold-beds-column">
-						<div class="bhdm-hold-title">On Hold Beds</div>
-							<span class="bhdm-data"><strong>Male</strong><br> {{holdBedMALE}}</span>
-							<span class="bhdm-data"><strong>Female</strong><br> {{holdBedFEMALE}}</span>
+						<div class="col-6 bed-org__hold-col">
+						<div class="bed-org__hold">On Hold Beds</div>
+							<span class="bed-org__data"><strong>Male</strong><br> {{holdBedMALE}}</span>
+							<span class="bed-org__data"><strong>Female</strong><br> {{holdBedFEMALE}}</span>
 						</div>
 					</div>
-				<div class="bhdm-update">Last Updated: {{updatedTime}}, {{updatedDate}}</div>
+				<div class="bed-org__update">Last Updated: {{updatedTime}}, {{updatedDate}}</div>
 			</div>
 		{{/each}}
 	</script>
+
 </head>
 <body>
-	<div class="blue-bg"></div>
-		<div class="container bh-bed-data animate">
-			<div class="bhd-page-title">
-	  			<h1>Finger Lakes Behavioral Health Bed Board</h1>
-	  			<p>This is a status board of all of the current number of Behavioral Health beds available for intake in the finger lakes region. Refresh the page to view the most up-to-date information.</p>
+	<div class="bg--blue"></div>
+		<div class="container container--bed animate">
+			<div class="title-block">
+	  			<h1 class="title-block__header">Finger Lakes Behavioral Health Bed Board</h1>
+	  			<p class="title-block__desc">This is a status board of all of the current number of Behavioral Health beds available for intake in the finger lakes region. Refresh the page to view the most up-to-date information.</p>
 			</div>
-	  		<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#GlossaryModal">Glossary of Terms <i class="fas fa-bars"></i></button>
-	  		<button type="button" class="btn btn-primary" href="#" target="_blank">Feedback <i class="fas fa-comment"></i></button>
-	  		<button type="button" class="btn btn-secondary" value="Refresh Page" onClick="window.location.reload()">Refresh  <i class="fas fa-sync-alt"></i></button>
+	  		<button type="button" class="btn btn--primary" data-toggle="modal" data-target="#GlossaryModal">Glossary of Terms <i class="fas fa-bars"></i></button>
+	  		<button type="button" class="btn btn--primary" href="#" target="_blank">Feedback <i class="fas fa-comment"></i></button>
+	  		<button type="button" class="btn btn--secondary" value="Refresh Page" onClick="window.location.reload()">Refresh  <i class="fas fa-sync-alt"></i></button>
 
 
-			<table id="bh-table" class="table table-striped animate tablesorter">
+			<table id="bed-table-sort" class="bed-table table-striped animate tablesorter">
 			    <thead>
-			    	<tr class="bhd-top-header">
+			    	<tr class="bed-table__header">
 				        <th colspan="3"> </th>
-				        <th colspan="2" class="bhd-open-title">OPEN BEDS</th>
-				        <th colspan="2" class="bhd-hold-title">ON HOLD</th>
+				        <th colspan="2" class="bed-table__open">OPEN BEDS</th>
+				        <th colspan="2" class="bed-table__hold">ON HOLD</th>
 				        <th> </th>
 			      	</tr>
 			      	<tr>
@@ -123,8 +121,8 @@
 				</tbody>
 			</table>
 
-			<div class="row bhdm animate">
-				<div id="items-mobile" class="col bhdm-col">
+			<div class="row animate">
+				<div id="items-mobile" class="col">
 				</div>
 			</div>
 		</div>
@@ -135,7 +133,7 @@
 		<div class="text-muted text-small rrh-footer">
 			<img src="https://s26670.pcdn.co/wp-content/uploads/2018/05/RRH_Logo_BlackBlue_SMALL.png" alt="Rochester Regional Health Logo">
 			<p><small>Copyright 2019. Rochester Regional Health. All Rights Reserved.</small></p>
-			<ul class="rrh-footer-links text-small">
+			<ul class="rrh-footer__links text-small">
 				<li><a href="https://www.rochesterregional.org/physician-directory?q&sortBy=alpha&sortOrder=asc&page=1">Find A Doctor</a></li>
 				<li><a href="https://www.rochesterregional.org/services?q&sortBy=relevance&sortOrder=asc&page=1">Services</a></li>
 				<li><a href="https://www.rochesterregional.org/disclaimer">Disclaimer</a></li>
@@ -164,7 +162,7 @@
 		        		<p class="modal-p"><img src="https://via.placeholder.com/200x100?text=Image" alt="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur reprehenderit nesciunt, qui, dolor beatae libero asperiores. Iusto, nulla, modi! Laborum explicabo ab est, voluptatum ipsa placeat ex. Quam, ducimus, omnis.</p>
 		      		</div>
 		      		<div class="modal-footer">
-		        		<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+		        		<button type="button" class="btn btn--primary" data-dismiss="modal">Close</button>
 		      		</div>
 		    	</div>
 		  	</div>
@@ -172,23 +170,6 @@
 		<!-- ---------- End Modal ---------- -->
 
 	<script src="js/main.min.js"></script>
-	<script type="text/javascript">		
-			function FetchTable() {
-		    $('#bh-table').tablesorter({
-				tableClass: 'tablesorter',
-			    cssAsc: "tablesorter-headerSortUp",
-			    cssDesc: "tablesorter-headerSortDown",
-			    cssHeader: "tablesorter-header",
-			    cssHeaderRow: "tablesorter-headerRow",
-			    cssIcon: "tablesorter-icon",
-			    cssChildRow: "tablesorter-childRow",
-			    cssInfoBlock: "tablesorter-infoOnly",
-			    cssProcessing: "tablesorter-processing",
-			})
-		};
-		setTimeout(FetchTable,1350);
-
-		if (location.protocol !== "https:") {location.protocol = "https:";}
-	</script>
+	
 </body>
 </html>

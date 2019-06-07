@@ -8,6 +8,3 @@ A basic webpage that uses Front-End web technologies to post and display the cur
 * JQuery
 * Bootstrap
 
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)

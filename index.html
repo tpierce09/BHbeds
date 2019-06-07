@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>FLSU Behavioral Health Bed Board</title>
+	<title>Finger Lakes Region SUD Treatment – Bed Finder</title>
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="0" />
@@ -80,12 +80,18 @@
 		{{/each}}
 	</script>
 
+	<script>
+
+		
+
+	</script>
+
 </head>
 <body>
 	<div class="bg--blue"></div>
 		<div class="container container--bed animate">
 			<div class="title-block">
-	  			<h1 class="title-block__header">Finger Lakes Behavioral Health Bed Board</h1>
+	  			<h1 class="title-block__header">Finger Lakes Region SUD Treatment – Bed Finder</h1>
 	  			<div class="title-block__desc">
 	  				<p>The following information is provided through the collaboration of the Finger Lakes Regional Planning Consortium and Rochester Regional Health. While participating providers strive to keep this information current and update it several times per day when it changes, the reporting of open beds on this web page is not a guarantee of access, as admittance is dependent on multiple factors, including the determination of the LOCADTR assessment tool.</p>
 	  					<p>View the <span class="is-bold">Glossary</span> below for more detailed information regarding definitions and the categories of treatment.</p>
@@ -95,6 +101,10 @@
 	  		<button type="button" class="btn btn--primary" data-toggle="modal" data-target="#GlossaryModal">Glossary of Terms <i class="fas fa-bars"></i></button>
 	  		<a class="btn btn--primary" href="https://www.surveymonkey.com/r/GSL6TV7" target="_blank">Feedback <i class="fas fa-comment"></i></a>
 
+	  		<div class="search-box">
+	  			<input id="bed-table-search" type="text" placeholder="Search..">
+	  		</div>
+			
 			<table id="bed-table-sort" class="bed-table table-striped animate tablesorter">
 			    <thead>
 			    	<tr class="bed-table__header">

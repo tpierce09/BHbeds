@@ -17,10 +17,15 @@
 			.modal-header, .modal-footer {border: 0px;}
 			.modal-title {margin-bottom: 0;line-height: 1.5;font-family: 'Rubik', sans-serif;font-weight: 700;}
 			
-			.bg--blue {background: #0077c8; height: 400px;}
+			.bg--blue {background-color: #0077c8; height: 400px;}
 			.close {float: right;font-size: 2.5rem;font-weight: 400;line-height: 1;color: #000;text-shadow: none;opacity: 1;}
 			.has-border {border-left: 1px solid #e0e0e0;}
 			.is-bold {font-weight: 700;}			
+		/* END */
+
+		/* search box */
+			.search-box {margin-bottom: 30px;}
+			.search-box input {width: 100%;padding: 10px;height: 50px;border-radius: 4px;border: 1px solid #84c7d6; font-size: 22px;}
 		/* END */
 
 		/* Buttons */
@@ -41,7 +46,7 @@
 			.bed-table td, .bed-table th {vertical-align: middle; border-top: none;}
 			.bed-table__open {background: #0077c8; color: #fff; padding: 8px;}
   			.bed-table__hold {background: #84c7d6; color: #fff;}
-  			.bed-table__header th {border: 0px solid #fff; text-align: center; padding: 0px;}
+  			.bed-table__header th {border: 0px solid #fff; text-align: center; padding: 0px; pointer-events:none;}
   			.bed__title a {display: block; font-size: 18px; font-weight: 700; color: #0077c8}
 			.bed__title a:hover {color: #000;}
 			.bed__bed-type {display: block;}

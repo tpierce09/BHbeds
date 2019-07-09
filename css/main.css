@@ -18,6 +18,7 @@
 			.modal-title {margin-bottom: 0;line-height: 1.5;font-family: 'Rubik', sans-serif;font-weight: 700; padding-top: 20px;}
 			dl .col-sm-3, dl .col-sm-9 {margin-bottom: 20px; border-bottom: 1px solid #e0e0e0; padding-bottom: 20px;}
 			.modal .row {padding: 10px;}
+			.row {animation-delay: .4s; animation-name: animate;}
 			
 			.bg--blue {background-color: #0077c8; height: 400px;}
 			.close {float: right;font-size: 2.5rem;font-weight: 400;line-height: 1;color: #000;text-shadow: none;opacity: 1;}
@@ -40,7 +41,7 @@
 		/* END */
 
 		/* Behavioral Health Data (bhd) Fields */
-			.bed-table {width: 100%; animation-delay: .8s;}
+			.bed-table {width: 100%; animation-delay: .2s;}
 			.bed-table thead th {border-bottom: none;}
 			.bed-table td, .bed-table th {vertical-align: middle;}
 			.bed-table th {padding: .75rem;}
@@ -51,7 +52,7 @@
   			.bed-table__header th {border: 0px solid #fff; text-align: center; padding: 0px; pointer-events:none;}
   			.bed__title a {display: block; font-size: 18px; font-weight: 700; color: #0077c8}
 			.bed__title a:hover {color: #000;}
-			.bed__bed-type {display: block;}
+			.bed__program, .bed__bed-type {display: block; font-weight: 700;}
 			.bed__description {display: block; font-size: 12px; margin: 5px 0 15px 0}
 			.bed__contact-email {display: block;}
 			.bed__contact-email a {color: #0077c8}
@@ -76,13 +77,28 @@
 
 		/* footer */
 			.rrh-footer {margin: auto; width: 100%; max-width: 500px; text-align: center; margin-top: 50px;}
-			.rrh-footer img {width: 100%; max-width: 150px;}
+			
+			.rrh-footer .rrh-footer__logo {position: relative; display: inline-block;}
+			.rrh-footer .rrh-footer__logo:not(:last-of-type) {padding-right: 20px;}
+			.rrh-footer .rrh-footer__logo:not(:first-of-type) {padding-left: 20px;}
+			.rrh-footer .rrh-footer__logo:not(:last-of-type)::before { content: '';
+			    height: 100%;
+			    width: 1px;
+			    position: absolute;
+			    right: 0;
+			    top: 0;
+			    background-color: #e0e0e0;}
+			    .rrh-footer .rrh-footer__logo:not(:first-of-type)::before { content: '';width: 0px;}
+			.rrh-footer .rrh-footer__logo--rrh {width: 100%; max-width: 150px;}
+			.rrh-footer .rrh-footer__logo--rpc {width: 100%; max-width: 60px;}
 			.rrh-footer p {margin: 20px auto 0 auto; line-height: 1em;}
 			.rrh-footer__links {padding: 0px; margin-bottom: 40px;}
 			.rrh-footer__links li {display: inline; font-size: 60%; padding: 0 4px;}
 			.rrh-footer__links li a {color: #6c757d;}
 			.rrh-footer__links li:first-of-type {padding-left: 0;}
 			.rrh-footer__links li:last-of-type {padding-right: 0;}
+			.rrh-footer__copyright {margin: 20px auto 0px auto;}
+
 		/* END */
 
 		/* Animations */
@@ -149,6 +165,7 @@
   			.container--bed {padding: 15px; margin-top: -200px;}
   			.btn {margin-bottom: 20px;}
   			.bg--blue {height: 300px;}
+  			.title-block__break {display: none;}
   			
 
 		@media screen and (max-width: 575px) {

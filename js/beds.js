@@ -1,16 +1,13 @@
 // pull api and convert to html elements
-$(document).ready(function(){
-	$.getJSON('https://api.sheety.co/8e7bb733-230c-4d61-a9ce-18e0350a15e4', function(data) {
-		var template = Handlebars.compile($('#item-template-desk').html())
-		$('#items-desk').html(template(data));
-	})
-	$.getJSON('https://api.sheety.co/8e7bb733-230c-4d61-a9ce-18e0350a15e4', function(data) {
-		var template = Handlebars.compile($('#item-template-mobile').html())
-		$('#items-mobile').html(template(data));
-	})
-})
+$.getJSON('https://api.sheety.co/8e7bb733-230c-4d61-a9ce-18e0350a15e4', function(data) {
+	var template1 = Handlebars.compile($('#item-template-desk').html())	
+	var template2 = Handlebars.compile($('#item-template-mobile').html())	
+		$('#items-desk').html(template1(data));
+		FetchTable();
+		$('#items-mobile').html(template2(data));
+});	
 
-// add sorting to table
+// add sorting to BH table
 function FetchTable() {
 	$('#bed-table-sort').tablesorter({
 	tableClass: 'tablesorter',
@@ -25,14 +22,12 @@ function FetchTable() {
 	})
 };
 
-// add sorting to table after 1.45 seconds
-setTimeout(FetchTable,1550);
-
 // search filter
 function searchFilter(){
 	$("#bed-table-search").on("keyup", function() {
 		var value = $(this).val().toLowerCase();
-		if ($(window).width() >= 992) { 
+		
+		if ($(window).width() >= 992) {
 			$("#items-desk tr").filter(function() {
 			$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
 			   	$("#items-desk tr:visible").each(function (index) {
@@ -47,14 +42,13 @@ function searchFilter(){
     	}	
 	});   
 };
+searchFilter();
 
 // keep checking browser width
-$(document).ready(function() {
-    searchFilter();
-    $(window).resize(searchFilter);
-});
+$(window).resize(searchFilter);
 
-
+// get current year
+$('#currentYear').text(new Date().getFullYear());
 
 
 

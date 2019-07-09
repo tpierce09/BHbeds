@@ -17,7 +17,6 @@
 
   	<!-- initialize scripts -->
   	 <script src="js/jquery.min.js"></script>
-  	 <script type="text/javascript" src="js/beds.js"></script>
 	 <script src="js/handlebars-v4.1.1.js"></script>
 
 	<!-- Google Analytics -->
@@ -36,10 +35,11 @@
 			<tr class="bed">
 				<td>
 					<span class="bed__title"><a href="{{organizationLink}}"target="_blank">{{organizationName}}</a></span>
+					<span class="bed__program">{{programName}}</span>
 					<span class="bed__bed-type">{{bedTypeName}}</span>
 					<span class="bed__description">{{description}}</span>
-					<span class="bed__contact-email"><span class="is-bold">Intake Contact:</span> <a href="mailto:{{emailAddress}}">{{intakeContact}}</a></span>
-					<span class="bed__contact-phone"><span class="is-bold">Phone:</span> {{phone}}</span>
+					<span class="bed__contact-email"><span>Intake Contact:</span> <a href="mailto:{{emailAddress}}">{{intakeContact}}</a></span>
+					<span class="bed__contact-phone"><span>Phone:</span> {{phone}}</span>
 				</td>
 				<td class="text-center">{{county}}</td>
 				<td class="text-center">{{bedType}}</td>
@@ -91,11 +91,11 @@
 	<div class="bg--blue"></div>
 		<div class="container container--bed animate">
 			<div class="title-block">
-	  			<h1 class="title-block__header">Finger Lakes Region SUD Treatment – Bed Finder</h1>
+	  			<h1 class="title-block__header">Finger Lakes Region SUD Treatment <br class="title-block__break">Bed Finder</h1>
 	  			<div class="title-block__desc">
-	  				<p>The following information is provided through the collaboration of the Finger Lakes Regional Planning Consortium and Rochester Regional Health. While participating providers strive to keep this information current and update it several times per day when it changes, the reporting of open beds on this web page is not a guarantee of access, as admittance is dependent on multiple factors, including the determination of the LOCADTR assessment tool.</p>
+	  				<p>The following information is provided through the collaboration of the Finger Lakes Regional Planning Consortium and Rochester Regional Health. While participating providers strive to keep this information current and update it several times per day, the reporting of open beds on this web page is not a guarantee of access. Admittance is dependent on multiple factors, including the level of care determined by the LOCADTR assessment tool.</p>
 	  					<p>View the <span class="is-bold">Glossary</span> below for more detailed information regarding definitions and the categories of treatment.</p>
-	  				<p class="alert alert-secondary">This is a pilot project to determine if this resource is useful to people seeking treatment and those assisting them. You can provide <span class="is-bold">feedback</span> regarding the usefulness of this resource below.</p>
+	  				<p class="alert alert-secondary">This is a pilot project to determine if this resource is useful to people seeking treatment and those assisting them. You can provide <span class="is-bold">feedback</span> regarding the value of this resource below.</p>
 	  			</div>
 			</div>
 	  		<button type="button" class="btn btn--primary" data-toggle="modal" data-target="#GlossaryModal">Glossary of Terms <i class="fas fa-bars"></i></button>
@@ -136,14 +136,19 @@
 
 		<!--  Footer -->
 		<div class="text-muted text-small rrh-footer">
-			<img src="https://s26670.pcdn.co/wp-content/uploads/2018/05/RRH_Logo_BlackBlue_SMALL.png" alt="Rochester Regional Health Logo">
-			<p><small>Copyright 2019. Rochester Regional Health. All Rights Reserved.</small></p>
+			<div class="rrh-footer__logo">
+				<a href="https://rochesterregional.org/" target="_blank"><img class="rrh-footer__logo--rrh" src="https://s26670.pcdn.co/wp-content/uploads/2018/05/RRH_Logo_BlackBlue_SMALL.png" alt="Rochester Regional Health Logo"></a>
+			</div>
+			<div class="rrh-footer__logo">
+				<a href="http://www.clmhd.org/rpc/" target="_blank"><img class="rrh-footer__logo--rpc" src="media/RPC-logo.jpg" alt="RPC Logo"></a>
+			</div>
+			<div class="rrh-footer__copyright"><small>Copyright <span id="currentYear"></span>. Rochester Regional Health. All Rights Reserved.</small></div>
+
+			
+
 			<ul class="rrh-footer__links text-small">
-				<li><a href="https://www.rochesterregional.org/physician-directory?q&sortBy=alpha&sortOrder=asc&page=1">Find A Doctor</a></li>
-				<li><a href="https://www.rochesterregional.org/services?q&sortBy=relevance&sortOrder=asc&page=1">Services</a></li>
-				<li><a href="https://www.rochesterregional.org/disclaimer">Disclaimer</a></li>
-				<li><a href="https://www.rochesterregional.org/privacy-notice">Privacy Notice</a></li>
-				<li><a href="https://careers.rochesterregional.org/">Careers</a></li>
+				<li><a href="https://www.rochesterregional.org/disclaimer" target="_blank">Disclaimer</a></li>
+				<li><a href="https://www.rochesterregional.org/privacy-notice" target="_blank">Privacy Notice</a></li>			
 			</ul>
 		</div>
 		<!-- End Footer -->
@@ -160,20 +165,30 @@
 		      		</div>
 					<div class="container">
 						<dl class="row">
-							<dt class="col-sm-3">LOCADTR</dt>
-							<dd class="col-sm-9">LOCADTR is a clinical tool, used in conjunction with a full assessment of an individual presenting for Substance Use Disorder treatment. The purpose of the <span class="is-bold">LOCADTR</span> is to determine the most appropriate recommended <span class="is-bold">level of care</span> based on the clinician's answers to the individual's risks and resources.</dd>
+							
 
 							<dt class="col-sm-3">Bed Status OPEN</dt>
-							<dd class="col-sm-9">A currently available bed</dd>
+							<dd class="col-sm-9">A currently available bed.</dd>
 
 							<dt class="col-sm-3">Bed Status ON HOLD</dt>
 							<dd class="col-sm-9">An open bed for which a specific person is being assessed for admission. If that admission does not take place as expected, this can become an open bed.</dd>
 
 							<dt class="col-sm-3">Bed Type</dt>
-							<dd class="col-sm-9">These numeric classifications identify the OASAS licensed category of the bed. For detailed information regarding the specific levels of care, refer to OASAS <a href="https://www.oasas.ny.gov/hps/state/CD_descriptions.cfm">Substance Use Disorder Service Descriptions.</a></dd>
+							<dd class="col-sm-9">These numeric classifications identify the OASAS licensed category of the bed. For detailed information regarding the specific levels of care, refer to OASAS <a href="https://www.oasas.ny.gov/hps/state/CD_descriptions.cfm" target="_blank">Substance Use Disorder Service Descriptions.</a></dd>
+
+							<dt class="col-sm-3">Finger Lakes Region</dt>
+							<dd class="col-sm-9"><p>The geographic region represented in this website includes the following counties:<br>
+								<span>Chemung, Livingston, Monroe, Ontario, Schuyler, Seneca, Steuben, Wayne, Yates</span></p>
+								<p>For this pilot project, all detox, inpatient rehab and 820 stabilization and rehabilitation providers in the above counties are participating except for the following:<br>
+								<span>Loyola Recovery Foundation. Dick Van Dyke ATC, John L. Norris ATC</span></p>
+								Similar programs are also available in adjacent counties: Genesee, Tompkins. <a href="https://www.oasas.ny.gov/providerDirectory/index.cfm" target="_blank">Find these and other NYS programs</a>
+							</dd>
+
+							<dt class="col-sm-3">LOCADTR</dt>
+							<dd class="col-sm-9">A clinical tool used in conjunction with a full assessment of an individual presenting for Substance Use Disorder treatment. The purpose of the <span class="is-bold">LOCADTR</span> is to determine the most appropriate recommended level of care based on the clinician's answers to the individual's risks and resources.</dd>
 
 							<dt class="col-sm-3">Other Levels of Care</dt>
-							<dd class="col-sm-9">This web page includes only inpatient, detox and 820 residential resources. Many people are assisted in their recovery in less intensive settings. Refer to OASAS <a href="https://www.oasas.ny.gov/hps/state/CD_descriptions.cfm">Substance Use Disorder Service Descriptions</a> for detailed information about:
+							<dd class="col-sm-9">This web page includes only inpatient, detox and 820 residential stabilization and rehabilitation resources. Many people are assisted in their recovery in less intensive settings. Refer to OASAS <a href="https://www.oasas.ny.gov/hps/state/CD_descriptions.cfm" target="_blank">Substance Use Disorder Service Descriptions</a> for detailed information about:
 			        			<ul>
 			        				<li>Outpatient Services</li>
 			        				<li>Opiod Treatment Services</li>
@@ -181,10 +196,8 @@
 			        				<li>Recovery Support and Housing Services</li>
 			        				<li>Prevention Services</li>
 			        			</ul>
+			        			<span class="is-bold">Medication-Assisted Treatment (MAT)</span> is the use of medications, in combination with counseling and behavioral therapies, to provide a whole-patient approach to the treatment of substance use disorders. Research shows that when treating substance use disorders, a combination of medication and behavioral therapies is most successful. It is not necessary to be in an inpatient or detox level of care to receive MAT.
 		        			</dd>
-
-		        			<dt class="col-sm-3">Medication-Assisted Treatment (MAT)</dt>
-							<dd class="col-sm-9">is the use of medications, in combination with counseling and behavioral therapies, to provide a whole-patient approach to the treatment of substance use disorders. Research shows that when treating substance use disorders, a combination of medication and behavioral therapies is most successful. It is not necessary to be in an inpatient or detox level of care to receive MAT.</dd>
 
 						</dl>
 					</div>
@@ -194,6 +207,8 @@
 		<!-- ---------- End Modal ---------- -->
 
 	<script src="js/main.min.js"></script>
+	<script type="text/javascript" src="js/beds.js"></script>
+
 	
 </body>
 </html>

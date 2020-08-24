@@ -1,0 +1,83 @@
+.rrh-footer {
+	margin: auto;
+	width: 100%;
+	max-width: 500px;
+	text-align: center;
+	margin-top: 50px;
+
+	&__logo {
+		position: relative;
+		display: inline-block;
+
+		&:not(:last-of-type) {
+			padding-right: 20px;
+		}
+
+		&:not(:first-of-type) {
+			padding-left: 20px;
+		}
+
+		&:not(:last-of-type)::before {
+			content: '';
+			height: 100%;
+			width: 1px;
+			position: absolute;
+			right: 0;
+			top: 0;
+			background-color: #e0e0e0;
+		}
+
+		&:not(:first-of-type)::before {
+			content: '';
+			width: 0px;
+		}
+
+		a {
+			vertical-align: middle;
+		}
+
+		.rpc-logo {
+			width: 100%;
+			max-width: 60px;
+		}
+
+		.rrh-logo {
+			width: 100%;
+			max-width: 150px;
+		}
+	}
+
+	p {
+		margin: 20px auto 0 auto;
+		line-height: 1em;
+	}
+
+	&__links {
+		padding: 0px;
+		margin-bottom: 40px;
+
+		li {
+			display: inline;
+			font-size: 60%;
+			padding: 0 4px;
+
+			a {
+				color: #6c757d;
+				vertical-align: middle;
+			}
+
+			&:first-of-type {
+				padding-left: 0;
+			}
+
+			&:last-of-type {
+				padding-right: 0;
+			}
+		}
+	}
+
+	&__copyright {
+		margin: 20px auto 0px auto;
+		color: #6c757d;
+	}
+}

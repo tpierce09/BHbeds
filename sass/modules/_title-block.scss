@@ -1,0 +1,40 @@
+.title-block {
+	width: 90%;
+	max-width: 836px;
+	margin-bottom: 30px;
+
+	&__header {
+		font-family: 'Rubik',sans-serif; 
+		font-weight: 700;
+		transition: font-size .5s ease;
+		transition-delay: .4s;
+		font-size: 2.5rem;
+		line-height: 1.2;
+		margin-bottom: .5rem;
+		margin-top: 0px;
+
+		@media (max-width: 601px) {
+			font-size: 1.8rem;
+    	}
+	}
+
+	&__desc {
+		transition: font-size .5s ease;
+		transition-delay: .4s;
+
+		@media (max-width: 601px) {
+			font-size: .8rem;
+    	}
+	}
+
+	&__break {
+
+		@media (max-width: 991px) {
+			display: none;
+		}
+	}
+
+	@media (max-width: 601px) {
+		width: 100%;
+    }
+}

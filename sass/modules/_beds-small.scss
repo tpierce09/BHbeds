@@ -1,0 +1,107 @@
+.bed-org {
+	border: 1px solid #84c7d6;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	padding: 20px;
+	display: none;
+
+	@media (max-width: 991px) {
+        display: block;
+        background: #ffffff;
+    }
+
+	a {
+		font-weight: bold;
+		color: #0077c8;
+		text-decoration: none;
+		cursor: pointer;
+
+		&:hover {
+			color: #000;
+			text-decoration: underline;
+		}
+	}
+
+	&__program {
+		display: block;
+		font-weight: bold;
+	}
+
+	&__bed-type {
+		display: block;
+		font-weight: bold;
+	}
+
+	
+
+	&__description {
+		display: block;
+		font-size: 12px;
+		margin: 5px 0 10px 0;
+	}
+
+	&__hours, &__phone, &__county {
+		opacity: .8;
+		font-size: 14px;
+	}
+
+	&__update {
+		font-size: 12px;
+		margin-top: 10px;
+		font-style: italic;
+		opacity: .7
+	}
+
+
+	.bed-org-data {
+		display: -ms-flexbox;
+	    display: flex;
+	    -ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	    animation-delay: .4s;
+    	animation-name: animate;
+
+		&__open-col {
+			padding-right: 3px;
+			flex-basis: 50%;
+			position: relative;
+		    width: 100%;
+		}
+
+		&__hold-col {
+			padding-left: 3px;
+			flex-basis: 50%;
+			position: relative;
+		    width: 100%;
+		}
+
+		&__data {
+			display: inline-block;
+			width: 48.5%;
+			text-align: center;
+			background: #f5f5f5;
+		}
+
+		&__open {
+			background: #0077c8;
+			color: #fff;
+			font-weight: bold;
+			padding: 4px;
+			margin-top: 10px;
+			text-align: center;
+			display: block;
+			font-size: 14px;
+		}
+
+		&__hold {
+			background: #84c7d6;
+			color: #fff;
+			font-weight: bold;
+			padding: 4px;
+			margin-top: 10px;
+			text-align: center;
+			font-size: 14px;
+		}
+	}
+	
+}

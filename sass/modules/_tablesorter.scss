@@ -1,0 +1,42 @@
+/* table arrow filters */
+			.tablesorter-header-inner {
+				display: inline;
+			}
+
+			.tablesorter .header:after, 
+			.tablesorter .tablesorter-header:after {
+				font-family: 'Font Awesome 5 Free';
+			  content: "\f0dc";
+			  float: right;
+			  font-size: 12px;
+			  padding-top: 5px;
+			  margin-left: 5px;
+			  color: #b3b3b3;
+			}
+			.tablesorter .headerSortUp:after, 
+			.tablesorter .tablesorter-headerSortUp:after, 
+			.tablesorter .tablesorter-headerAsc:after {
+				font-family: 'Font Awesome 5 Free';
+			  content: "\f0de";
+			  float: right; 
+			  font-size: 12px;
+			  padding-top: 5px;
+			  margin-left: 5px;
+			  color: #b3b3b3;
+			}
+			.tablesorter .headerSortDown:after, 
+			.tablesorter .tablesorter-headerSortDown:after, 
+			.tablesorter .tablesorter-headerDesc:after {
+				font-family: 'Font Awesome 5 Free';
+			  content: "\f0dd";
+			  float: right; 
+			  font-size: 12px;
+			  padding-top: 5px;
+			  margin-left: 5px;
+			  color: #b3b3b3;
+			}
+
+			tr.bed-table__header.tablesorter-headerRow th:after {
+			    content: '';
+			    cursor: default;
+			}

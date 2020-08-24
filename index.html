@@ -11,13 +11,14 @@
 	<link rel="shortcut icon" href="media/favicon.ico">
 	
 	<!-- load styles -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
+  	<link rel="stylesheet" type="text/css" href="main.css">
+  	<link rel="stylesheet" href="/css/main.css">
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
   	<!-- initialize scripts -->
   	 <script src="js/jquery.min.js"></script>
-	 <script src="js/handlebars-v4.1.1.js"></script>
+	 <script src="js/handlebars.js"></script>
 
 	<!-- Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6382893-31"></script>
@@ -62,17 +63,17 @@
 				<div class="bed-org__hours">Hours: {{hours}}</div>
 				<div class="bed-org__phone">Phone: <a href="tel:+{{phone}}">{{phone}}</a></div>
 				<div class="bed-org__county">County: {{county}}</div>
-					<div class="row">
-						<div class="col-6 bed-org__open-col">
-							<span class="bed-org__open">Open Beds</span>
-							<span class="bed-org__data"><strong>Male</strong><br> {{openBedMALE}}</span>
-							<span class="bed-org__data"><strong>Female</strong><br> {{openBedFEMALE}}</span>
+					<div class="bed-org-data">
+						<div class="bed-org-data__open-col">
+							<span class="bed-org-data__open">Open Beds</span>
+							<span class="bed-org-data__data"><strong>Male</strong><br> {{openBedMALE}}</span>
+							<span class="bed-org-data__data"><strong>Female</strong><br> {{openBedFEMALE}}</span>
 						</div>
 
-						<div class="col-6 bed-org__hold-col">
-						<div class="bed-org__hold">On Hold Beds</div>
-							<span class="bed-org__data"><strong>Male</strong><br> {{holdBedMALE}}</span>
-							<span class="bed-org__data"><strong>Female</strong><br> {{holdBedFEMALE}}</span>
+						<div class="bed-org-data__hold-col">
+						<div class="bed-org-data__hold">On Hold Beds</div>
+							<span class="bed-org-data__data"><strong>Male</strong><br> {{holdBedMALE}}</span>
+							<span class="bed-org-data__data"><strong>Female</strong><br> {{holdBedFEMALE}}</span>
 						</div>
 					</div>
 				<div class="bed-org__update">Last Updated: {{updatedTime}}, {{updatedDate}}</div>
@@ -88,17 +89,17 @@
 
 </head>
 <body>
-	<div class="bg--blue"></div>
+	<div class="background-shadow"></div>
 		<div class="container container--bed animate">
 			<div class="title-block">
 	  			<h1 class="title-block__header">Finger Lakes Region SUD Treatment <br class="title-block__break">Bed Finder</h1>
 	  			<div class="title-block__desc">
 	  				<p>The following information is provided through the collaboration of the Finger Lakes Regional Planning Consortium and Rochester Regional Health. While participating providers strive to keep this information current and update it several times per day, the reporting of open beds on this web page is not a guarantee of access. Admittance is dependent on multiple factors, including the level of care determined by the LOCADTR assessment tool.</p>
 	  					<p>View the <span class="is-bold">Glossary</span> below for more detailed information regarding definitions and the categories of treatment.</p>
-	  				<p class="alert alert-secondary">This is a pilot project to determine if this resource is useful to people seeking treatment and those assisting them. You can provide <span class="is-bold">feedback</span> regarding the value of this resource below.</p>
+	  				<p class="alert alert--secondary">This is a pilot project to determine if this resource is useful to people seeking treatment and those assisting them. You can provide <span class="is-bold">feedback</span> regarding the value of this resource below.</p>
 	  			</div>
 			</div>
-	  		<button type="button" class="btn btn--primary" data-toggle="modal" data-target="#GlossaryModal">Glossary of Terms <i class="fas fa-bars"></i></button>
+	  		<button role="button" class="btn btn--primary" data-modal="#GlossaryModal">Glossary of Terms <i class="fas fa-bars"></i></button>
 	  		<a class="btn btn--primary" href="https://www.surveymonkey.com/r/GSL6TV7" target="_blank">Feedback <i class="fas fa-comment"></i></a>
 
 	  		<div class="search-box">
@@ -135,78 +136,66 @@
 		</div>
 
 		<!--  Footer -->
-		<div class="text-muted text-small rrh-footer">
+		<div class="rrh-footer">
 			<div class="rrh-footer__logo">
-				<a href="https://rochesterregional.org/" target="_blank"><img class="rrh-footer__logo--rrh" src="https://s26670.pcdn.co/wp-content/uploads/2018/05/RRH_Logo_BlackBlue_SMALL.png" alt="Rochester Regional Health Logo"></a>
+				<a href="https://rochesterregional.org/" target="_blank"><img class="rrh-logo" src="https://s26670.pcdn.co/wp-content/uploads/2018/05/RRH_Logo_BlackBlue_SMALL.png" alt="Rochester Regional Health Logo"></a>
 			</div>
 			<div class="rrh-footer__logo">
-				<a href="http://www.clmhd.org/rpc/" target="_blank"><img class="rrh-footer__logo--rpc" src="media/RPC-logo.jpg" alt="RPC Logo"></a>
+				<a href="http://www.clmhd.org/rpc/" target="_blank"><img class="rpc-logo" src="media/RPC-logo.jpg" alt="RPC Logo"></a>
 			</div>
 			<div class="rrh-footer__copyright"><small>Copyright <span id="currentYear"></span>. Rochester Regional Health. All Rights Reserved.</small></div>
 
 			
 
-			<ul class="rrh-footer__links text-small">
+			<ul class="rrh-footer__links">
 				<li><a href="https://www.rochesterregional.org/disclaimer" target="_blank">Disclaimer</a></li>
 				<li><a href="https://www.rochesterregional.org/privacy-notice" target="_blank">Privacy Notice</a></li>			
 			</ul>
 		</div>
 		<!-- End Footer -->
+		<!-- new modal -->
+		<div class="modal" data-modal-window  id="GlossaryModal">
+			<div class="modal__wrapper">
+			  <div data-modal-window class="modal__content animate">
+			    <span data-modal-close class="close animate">&times;</span>
+			    <h2 class="modal-title" id="GlossaryModalLabel">Glossary of Terms</h2>
+			      <dl class="glossary">
+					<dt class="glossary__term">Bed Status OPEN</dt>
+					<dd class="glossary__desc">A currently available bed.</dd>
 
-		<!-- ---------- Modal ---------- -->
-		<div class="modal fade" id="GlossaryModal" tabindex="-1" role="dialog" aria-labelledby="GlossaryModalLabel" aria-hidden="true">
-		  	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-		    	<div class="modal-content">
-		      		<div class="modal-header">
-		        		<h2 class="modal-title" id="GlossaryModalLabel">Glossary of Terms</h2>
-		        		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          		<span aria-hidden="true">&times;</span>
-		        		</button>
-		      		</div>
-					<div class="container">
-						<dl class="row">
-							
+					<dt class="glossary__term">Bed Status ON HOLD</dt>
+					<dd class="glossary__desc">An open bed for which a specific person is being assessed for admission. If that admission does not take place as expected, this can become an open bed.</dd>
 
-							<dt class="col-sm-3">Bed Status OPEN</dt>
-							<dd class="col-sm-9">A currently available bed.</dd>
+					<dt class="glossary__term">Bed Type</dt>
+					<dd class="glossary__desc">These numeric classifications identify the OASAS licensed category of the bed. For detailed information regarding the specific levels of care, refer to OASAS <a href="https://www.oasas.ny.gov/hps/state/CD_descriptions.cfm" target="_blank">Substance Use Disorder Service Descriptions.</a></dd>
 
-							<dt class="col-sm-3">Bed Status ON HOLD</dt>
-							<dd class="col-sm-9">An open bed for which a specific person is being assessed for admission. If that admission does not take place as expected, this can become an open bed.</dd>
+					<dt class="glossary__term">Finger Lakes Region</dt>
+					<dd class="glossary__desc"><p>The geographic region represented in this website includes the following counties:<br>
+						<span>Chemung, Livingston, Monroe, Ontario, Schuyler, Seneca, Steuben, Wayne, Yates</span></p>
+						<p>For this pilot project, all detox, inpatient rehab and 820 stabilization and rehabilitation providers in the above counties are participating except for the following:<br>
+						<span>Loyola Recovery Foundation. Dick Van Dyke ATC, John L. Norris ATC</span></p>
+						Similar programs are also available in adjacent counties: Genesee, Tompkins. <a href="https://www.oasas.ny.gov/providerDirectory/index.cfm" target="_blank">Find these and other NYS programs</a>
+					</dd>
 
-							<dt class="col-sm-3">Bed Type</dt>
-							<dd class="col-sm-9">These numeric classifications identify the OASAS licensed category of the bed. For detailed information regarding the specific levels of care, refer to OASAS <a href="https://www.oasas.ny.gov/hps/state/CD_descriptions.cfm" target="_blank">Substance Use Disorder Service Descriptions.</a></dd>
+					<dt class="glossary__term">LOCADTR</dt>
+					<dd class="glossary__desc">A clinical tool used in conjunction with a full assessment of an individual presenting for Substance Use Disorder treatment. The purpose of the <span class="is-bold">LOCADTR</span> is to determine the most appropriate recommended level of care based on the clinician's answers to the individual's risks and resources.</dd>
 
-							<dt class="col-sm-3">Finger Lakes Region</dt>
-							<dd class="col-sm-9"><p>The geographic region represented in this website includes the following counties:<br>
-								<span>Chemung, Livingston, Monroe, Ontario, Schuyler, Seneca, Steuben, Wayne, Yates</span></p>
-								<p>For this pilot project, all detox, inpatient rehab and 820 stabilization and rehabilitation providers in the above counties are participating except for the following:<br>
-								<span>Loyola Recovery Foundation. Dick Van Dyke ATC, John L. Norris ATC</span></p>
-								Similar programs are also available in adjacent counties: Genesee, Tompkins. <a href="https://www.oasas.ny.gov/providerDirectory/index.cfm" target="_blank">Find these and other NYS programs</a>
-							</dd>
-
-							<dt class="col-sm-3">LOCADTR</dt>
-							<dd class="col-sm-9">A clinical tool used in conjunction with a full assessment of an individual presenting for Substance Use Disorder treatment. The purpose of the <span class="is-bold">LOCADTR</span> is to determine the most appropriate recommended level of care based on the clinician's answers to the individual's risks and resources.</dd>
-
-							<dt class="col-sm-3">Other Levels of Care</dt>
-							<dd class="col-sm-9">This web page includes only inpatient, detox and 820 residential stabilization and rehabilitation resources. Many people are assisted in their recovery in less intensive settings. Refer to OASAS <a href="https://www.oasas.ny.gov/hps/state/CD_descriptions.cfm" target="_blank">Substance Use Disorder Service Descriptions</a> for detailed information about:
-			        			<ul>
-			        				<li>Outpatient Services</li>
-			        				<li>Opiod Treatment Services</li>
-			        				<li>Residential Services</li>
-			        				<li>Recovery Support and Housing Services</li>
-			        				<li>Prevention Services</li>
-			        			</ul>
-			        			<span class="is-bold">Medication-Assisted Treatment (MAT)</span> is the use of medications, in combination with counseling and behavioral therapies, to provide a whole-patient approach to the treatment of substance use disorders. Research shows that when treating substance use disorders, a combination of medication and behavioral therapies is most successful. It is not necessary to be in an inpatient or detox level of care to receive MAT.
-		        			</dd>
-
-						</dl>
+					<dt class="glossary__term">Other Levels of Care</dt>
+					<dd class="glossary__desc">This web page includes only inpatient, detox and 820 residential stabilization and rehabilitation resources. Many people are assisted in their recovery in less intensive settings. Refer to OASAS <a href="https://www.oasas.ny.gov/hps/state/CD_descriptions.cfm" target="_blank">Substance Use Disorder Service Descriptions</a> for detailed information about:
+				        <ul>
+				        	<li>Outpatient Services</li>
+				        	<li>Opiod Treatment Services</li>
+				        	<li>Residential Services</li>
+				        	<li>Recovery Support and Housing Services</li>
+				        	<li>Prevention Services</li>
+				        </ul>
+				        <span class="is-bold">Medication-Assisted Treatment (MAT)</span> is the use of medications, in combination with counseling and behavioral therapies, to provide a whole-patient approach to the treatment of substance use disorders. Research shows that when treating substance use disorders, a combination of medication and behavioral therapies is most successful. It is not necessary to be in an inpatient or detox level of care to receive MAT.
+			        </dd>
 					</div>
-		    	</div>
-		  	</div>
+				</dl>
+			   </div>
 		</div>
-		<!-- ---------- End Modal ---------- -->
-
-	<script src="js/main.min.js"></script>
+		<!-- end new modal -->
 	<script type="text/javascript" src="js/beds.js"></script>
 
 	

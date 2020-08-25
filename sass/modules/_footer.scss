@@ -24,7 +24,7 @@
 			position: absolute;
 			right: 0;
 			top: 0;
-			background-color: #e0e0e0;
+			background-color: $grey-300;
 		}
 
 		&:not(:first-of-type)::before {
@@ -62,7 +62,7 @@
 			padding: 0 4px;
 
 			a {
-				color: #6c757d;
+				color: $grey-600;
 				vertical-align: middle;
 			}
 
@@ -78,6 +78,6 @@
 
 	&__copyright {
 		margin: 20px auto 0px auto;
-		color: #6c757d;
+		color: $grey-600;
 	}
 }

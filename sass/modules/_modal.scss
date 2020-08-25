@@ -11,7 +11,7 @@
 
 
     &__wrapper {
-      background: #ffffff;
+      background: $white;
       margin: 80px auto auto auto;
       width: 100%;
       max-width: 900px;
@@ -30,7 +30,7 @@
 
         &__term {
           margin-bottom: 20px;
-          border-bottom: 1px solid #e0e0e0;
+          border-bottom: 1px solid $grey-300;
           padding-bottom: 20px;
           flex-basis: 25%;
           max-width: 25%;
@@ -39,7 +39,7 @@
 
         &__desc {
           margin-bottom: 20px;
-          border-bottom: 1px solid #e0e0e0;
+          border-bottom: 1px solid $grey-300;
           padding-bottom: 20px;
           flex-basis: 75%;
           max-width: 75%;
@@ -70,7 +70,7 @@
 }
 
 .modal-bg {
-    background-color: rgba(255,255,255,.9);
+    background-color: rgba($white,.9);
     bottom: 0;
     position: fixed;
     left: 0;
@@ -83,7 +83,7 @@
 }
 
 .close {
-    color: #000000;
+    color: $black;
     float: right;
     font-size: 50px;
     font-weight: bold;
@@ -93,12 +93,11 @@
     z-index: 9999;
     animation-duration: 2s;
     animation-delay: .3s;
-    // animation-fill-mode: forwards;
     transition: all .2s ease;
 
     &:hover, 
     &:focus {
-      color: #0077c8;
+      color: $lochmara;
       text-decoration: none;
       cursor: pointer;
       transform: scale(1.15)

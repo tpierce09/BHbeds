@@ -1,5 +1,5 @@
 .bed-org {
-	border: 1px solid #84c7d6;
+	border: 1px solid $monte-carlo;
 	border-radius: 5px;
 	margin-bottom: 15px;
 	padding: 20px;
@@ -7,17 +7,17 @@
 
 	@media (max-width: 991px) {
         display: block;
-        background: #ffffff;
+        background: $white;
     }
 
 	a {
 		font-weight: bold;
-		color: #0077c8;
+		color: $lochmara;
 		text-decoration: none;
 		cursor: pointer;
 
 		&:hover {
-			color: #000;
+			color: $black;
 			text-decoration: underline;
 		}
 	}
@@ -79,12 +79,12 @@
 			display: inline-block;
 			width: 48.5%;
 			text-align: center;
-			background: #f5f5f5;
+			background: $grey-100;
 		}
 
 		&__open {
-			background: #0077c8;
-			color: #fff;
+			background: $lochmara;
+			color: $white;
 			font-weight: bold;
 			padding: 4px;
 			margin-top: 10px;
@@ -94,8 +94,8 @@
 		}
 
 		&__hold {
-			background: #84c7d6;
-			color: #fff;
+			background: $monte-carlo;
+			color: $white;
 			font-weight: bold;
 			padding: 4px;
 			margin-top: 10px;

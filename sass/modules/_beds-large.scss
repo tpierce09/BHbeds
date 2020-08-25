@@ -27,7 +27,7 @@
 
 	&__header {
 		th {
-			border: 0px solid #fff;
+			border: 0px solid $white;
 			text-align: center;
 			padding: 0px;
 			pointer-events:none;
@@ -35,25 +35,25 @@
 	}
 
 	&__open {
-		background: #0077c8;
-		color: #fff;
+		background: $lochmara;
+		color: $white;
 		padding: 8px;
 	}
 
 	&__hold {
-		background: #84c7d6;
-		color: #fff;
+		background: $monte-carlo;
+		color: $white;
 	}
 
 	a {
 		display: block;
 		font-size: 18px;
 		font-weight: 700;
-		color: #0077c8;
+		color: $lochmara;
 		text-decoration: none;
 
 		&:hover {
-			color: #000;
+			color: $black;
 			text-decoration: underline;
 		}
 	}
@@ -80,10 +80,10 @@
 			display: block;
 
 			a {
-				color: #0077c8;
+				color: $lochmara;
 
 				&:hover {
-					color: #000;
+					color: $black;
 					text-decoration: underline;
 				}
 			}

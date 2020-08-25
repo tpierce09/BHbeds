@@ -22,26 +22,26 @@
 	}
 
 	&--primary {
-		background-color: #0077c8;
-		color: #fff;
-		border: 1px solid #0077c8;
+		background-color: $lochmara;
+		color: $white;
+		border: 1px solid $lochmara;
 
 		&:hover {
-			background: #fff;
-			color: #0077c8;
-			border: 1px solid #0077c8;
+			background: $white;
+			color: $lochmara;
+			border: 1px solid $lochmara;
 		}
 	}
 
 	&--secondary {
-		background: #fff;
-		color: #0077c8;
-		border: 1px solid #0077c8;
+		background: $white;
+		color: $lochmara;
+		border: 1px solid $lochmara;
 
 		&:hover {
-			background: #0077c8;
-			color: #fff;
-			border: 1px solid #0077c8;
+			background: $lochmara;
+			color: $white;
+			border: 1px solid $lochmara;
 		}
 	}
 }

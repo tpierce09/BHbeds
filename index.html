@@ -3,24 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<title>Finger Lakes Region SUD Treatment – Bed Finder</title>
 	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	<meta http-equiv="Expires" content="0" />
 	<link rel="shortcut icon" href="media/favicon.ico">
-	
-	<!-- load styles -->
-	<!-- <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"> -->
   	<link rel="stylesheet" type="text/css" href="main.css">
   	<link rel="stylesheet" href="/css/main.css">
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-
-  	<!-- initialize scripts -->
-  	 <script src="js/jquery.min.js"></script>
-	 <script src="js/handlebars.js"></script>
-
-	<!-- Google Analytics -->
+  	<script src="js/jquery.min.js"></script>
+	<script src="js/handlebars.js"></script>
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6382893-31"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -81,12 +73,6 @@
 		{{/each}}
 	</script>
 
-	<script>
-
-		
-
-	</script>
-
 </head>
 <body>
 	<div class="background-shadow"></div>
@@ -96,17 +82,17 @@
 	  			<div class="title-block__desc">
 	  				<p>The following information is provided through the collaboration of the Finger Lakes Regional Planning Consortium and Rochester Regional Health. While participating providers strive to keep this information current and update it several times per day, the reporting of open beds on this web page is not a guarantee of access. Admittance is dependent on multiple factors, including the level of care determined by the LOCADTR assessment tool.</p>
 	  					<p>View the <span class="is-bold">Glossary</span> below for more detailed information regarding definitions and the categories of treatment.</p>
-	  				<p class="alert alert--secondary">This is a pilot project to determine if this resource is useful to people seeking treatment and those assisting them. You can provide <span class="is-bold">feedback</span> regarding the value of this resource below.</p>
+	  				<p class="alert">This is a pilot project to determine if this resource is useful to people seeking treatment and those assisting them. You can provide <span class="is-bold">feedback</span> regarding the value of this resource below.</p>
 	  			</div>
 			</div>
 	  		<button role="button" class="btn btn--primary" data-modal="#GlossaryModal">Glossary of Terms <i class="fas fa-bars"></i></button>
 	  		<a class="btn btn--primary" href="https://www.surveymonkey.com/r/GSL6TV7" target="_blank">Feedback <i class="fas fa-comment"></i></a>
 
 	  		<div class="search-box">
-	  			<input id="bed-table-search" type="text" placeholder="Search..">
+	  			<input id="bed-table-search" type="text" placeholder="Search...">
 	  		</div>
 			
-			<table id="bed-table-sort" class="bed-table table-striped animate tablesorter">
+			<table id="bed-table-sort" class="bed-table animate tablesorter">
 			    <thead>
 			    	<tr class="bed-table__header">
 				        <th colspan="3"> </th>
@@ -128,14 +114,15 @@
 				<tbody id="items-desk">
 				</tbody>
 			</table>
-
-			<div class="row animate">
-				<div id="items-mobile" class="col">
-				</div>
+			
+			<div id="items-mobile" class="animate">
 			</div>
+			<div class="loading">
+				<img src="media/loading-animation2.gif" alt="loading ellipsis animated dots">
+			</div>
+			
 		</div>
 
-		<!--  Footer -->
 		<div class="rrh-footer">
 			<div class="rrh-footer__logo">
 				<a href="https://rochesterregional.org/" target="_blank"><img class="rrh-logo" src="https://s26670.pcdn.co/wp-content/uploads/2018/05/RRH_Logo_BlackBlue_SMALL.png" alt="Rochester Regional Health Logo"></a>
@@ -145,15 +132,12 @@
 			</div>
 			<div class="rrh-footer__copyright"><small>Copyright <span id="currentYear"></span>. Rochester Regional Health. All Rights Reserved.</small></div>
 
-			
-
 			<ul class="rrh-footer__links">
 				<li><a href="https://www.rochesterregional.org/disclaimer" target="_blank">Disclaimer</a></li>
 				<li><a href="https://www.rochesterregional.org/privacy-notice" target="_blank">Privacy Notice</a></li>			
 			</ul>
 		</div>
-		<!-- End Footer -->
-		<!-- new modal -->
+
 		<div class="modal" data-modal-window  id="GlossaryModal">
 			<div class="modal__wrapper">
 			  <div data-modal-window class="modal__content animate">
@@ -195,9 +179,7 @@
 				</dl>
 			   </div>
 		</div>
-		<!-- end new modal -->
-	<script type="text/javascript" src="js/beds.js"></script>
 
-	
+	<script type="text/javascript" src="js/beds.js"></script>
 </body>
 </html>

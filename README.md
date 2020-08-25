@@ -25,6 +25,7 @@ Below are instructions to setup and get this application operational using Googl
 * FontAwesome
 
 ## License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 The MIT License (MIT)
 
 Copyright (c) 2020. Tyler Pierce. 

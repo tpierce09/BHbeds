@@ -1,5 +1,5 @@
 # Finger Lakes Behavioral Health Bed Board
-A basic web app that uses Front-End web technologies to post and display the current *open* and *on hold* beds for local behavioral health institutions. https://flsudtxbeds.com/ 
+A basic web app that uses Front-End web technologies to post and display the current *open* and *on hold* beds and Google Sheets to store the data for local behavioral health institutions. https://flsudtxbeds.com/ 
 
 ## Setup
 Below are instructions to setup and get this application operational using Google Sheets as the data source, with the use of some light weight JavaScript libraries to minimize development effort and to get this working with little as possible, so that it may be shared across multiple platforms. 

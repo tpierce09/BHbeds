@@ -1,5 +1,5 @@
 // pull api and convert to html elements
-$.getJSON('https://api.sheety.co/8e7bb733-230c-4d61-a9ce-18e0350a15e4', function(data) {
+$.getJSON('https://api.sheety.co/f4f2201dd61223d70a87eb8b4df9ac9c/fingerLakesBedBoard/sheet1', function(data) {
 	var template1 = Handlebars.compile($('#item-template-desk').html())	
 	var template2 = Handlebars.compile($('#item-template-mobile').html())	
 		$('.loading').remove();

@@ -1,14 +1,25 @@
-// pull api and convert to html elements
-$.getJSON('https://api.sheety.co/f4f2201dd61223d70a87eb8b4df9ac9c/fingerLakesBedBoard/sheet1', function(data) {
-	var template1 = Handlebars.compile($('#item-template-desk').html())	
-	var template2 = Handlebars.compile($('#item-template-mobile').html())	
-		$('.loading').remove();
-		$('#items-desk').html(template1(data));
-		FetchTable();
-		$('#items-mobile').html(template2(data));
-});	
+// wait until page loads to post data
+document.addEventListener('DOMContentLoaded', function(event) {
+	populateList();
+})
 
-// add sorting to BH table
+// Get data from Google Sheet and post to page
+function populateList() {
+	let url = 'https://api.sheety.co/f4f2201dd61223d70a87eb8b4df9ac9c/fingerLakesBedBoard/organization';
+	fetch(url)
+	.then((response) => response.json())
+	.then(json => {
+		this.organization = json.organization;
+		var desktopTemplate = Handlebars.compile($('#item-template-desk').html())
+		var mobileTemplate = Handlebars.compile($('#item-template-mobile').html())
+		$('.loading').remove();
+		$('#items-desk').html(desktopTemplate(organization));
+		FetchTable();
+		$('#items-mobile').html(mobileTemplate(organization));
+	});
+}
+
+// Add sorting to Desktop table
 function FetchTable() {
 	$('#bed-table-sort').tablesorter({
 	tableClass: 'tablesorter',
@@ -23,7 +34,7 @@ function FetchTable() {
 	})
 };
 
-// search filter
+// Add search filter functionality
 function searchFilter(){
 	$("#bed-table-search").on("keyup", function() {
 		var value = $(this).val().toLowerCase();

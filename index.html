@@ -12,6 +12,7 @@
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
   	<script src="js/jquery.min.js?v=1"></script>
 	<script src="js/handlebars.js?v=1"></script>
+
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6382893-31"></script>
 	<script>
 	  window.dataLayer = window.dataLayer || [];
@@ -20,54 +21,57 @@
 
 	  gtag('config', 'UA-6382893-31');
 	</script>
+
+	<script>
+		
+	</script>
  
 	 
 	<script id="item-template-desk" type="text/x-handlebars-template">
-		{{#each this}}
+		{{#each this as |organization|}}
 			<tr class="bed">
 				<td>
-					<span class="bed__title"><a href="{{organizationLink}}"target="_blank">{{organizationName}}</a></span>
-					<span class="bed__program">{{programName}}</span>
-					<span class="bed__bed-type">{{bedTypeName}}</span>
-					<span class="bed__description">{{description}}</span>
-					<span class="bed__contact-email"><span>Intake Contact:</span> <a href="mailto:{{emailAddress}}">{{intakeContact}}</a></span>
-					<span class="bed__contact-phone"><span>Phone:</span> {{phone}}</span>
+					<span class="bed__title"><a href="{{organization.organizationLink}}"target="_blank">{{organization.organizationName}}</a></span>
+					<span class="bed__program">{{organization.programName}}</span>
+					<span class="bed__bed-type">{{organization.bedTypeName}}</span>
+					<span class="bed__description">{{organization.description}}</span>
+					<span class="bed__contact-email"><span>Intake Contact:</span> <a href="mailto:{{organization.emailAddress}}">{{organization.intakeContact}}</a></span>
+					<span class="bed__contact-phone"><span>Phone:</span> {{organization.phone}}</span>
 				</td>
-				<td class="text-center">{{county}}</td>
-				<td class="text-center">{{bedType}}</td>
-				<td class="has-border text-center">{{openBedMALE}}</td>
-				<td class="text-center">{{openBedFEMALE}}</td>
-				<td class="has-border text-center">{{holdBedMALE}}</td>
-				<td class="text-center">{{holdBedFEMALE}}</td>
-				<td class="has-border text-center">{{updatedDate}}<br>{{updatedTime}}</td>
+				<td class="text-center">{{organization.county}}</td>
+				<td class="text-center">{{organization.bedType}}</td>
+				<td class="has-border text-center">{{organization.openBedMale}}</td>
+				<td class="text-center">{{organization.openBedFemale}}</td>
+				<td class="has-border text-center">{{organization.holdBedMale}}</td>
+				<td class="text-center">{{organization.holdBedFemale}}</td>
+				<td class="has-border text-center">{{organization.updatedDate}}<br>{{organization.updatedTime}}</td>
 			</tr>
 		{{/each}}
 	</script>
 
 	<script id="item-template-mobile" type="text/x-handlebars-template">
-		{{#each this}}
+		{{#each this as |organization|}}
 			<div class="bed-org">
-				<a href="{{organizationLink}}" target="_blank">{{organizationName}}</a>
-				<div class="bed-org__program">{{programName}}</div>
-				<div class="bed-org__bed-type">{{bedTypeName}}</div>
-				<div class="bed-org__description">{{description}}</div>
-				<div class="bed-org__hours">Hours: {{hours}}</div>
-				<div class="bed-org__phone">Phone: <a href="tel:+{{phone}}">{{phone}}</a></div>
-				<div class="bed-org__county">County: {{county}}</div>
+				<a href="{{organization.organizationLink}}" target="_blank">{{organization.organizationName}}</a>
+				<div class="bed-org__program">{{organization.programName}}</div>
+				<div class="bed-org__bed-type">{{organization.bedTypeName}}</div>
+				<div class="bed-org__description">{{organization.description}}</div>
+				<div class="bed-org__phone">Phone: <a href="tel:+{{organization.phone}}">{{organization.phone}}</a></div>
+				<div class="bed-org__county">County: {{organization.county}}</div>
 					<div class="bed-org-data">
 						<div class="bed-org-data__open-col">
 							<span class="bed-org-data__open">Open Beds</span>
-							<span class="bed-org-data__data"><strong>Male</strong><br> {{openBedMALE}}</span>
-							<span class="bed-org-data__data"><strong>Female</strong><br> {{openBedFEMALE}}</span>
+							<span class="bed-org-data__data"><strong>Male</strong><br> {{organization.openBedMale}}</span>
+							<span class="bed-org-data__data"><strong>Female</strong><br> {{organization.openBedFemale}}</span>
 						</div>
 
 						<div class="bed-org-data__hold-col">
 						<div class="bed-org-data__hold">On Hold Beds</div>
-							<span class="bed-org-data__data"><strong>Male</strong><br> {{holdBedMALE}}</span>
-							<span class="bed-org-data__data"><strong>Female</strong><br> {{holdBedFEMALE}}</span>
+							<span class="bed-org-data__data"><strong>Male</strong><br> {{organization.holdBedMale}}</span>
+							<span class="bed-org-data__data"><strong>Female</strong><br> {{organization.holdBedFemale}}</span>
 						</div>
 					</div>
-				<div class="bed-org__update">Last Updated: {{updatedTime}}, {{updatedDate}}</div>
+				<div class="bed-org__update">Last Updated: {{organization.updatedTime}}, {{organization.updatedDate}}</div>
 			</div>
 		{{/each}}
 	</script>
@@ -179,6 +183,7 @@
 			   </div>
 		</div>
 
-	<script type="text/javascript" src="js/beds.js?v=2"></script>
+			<script type="text/javascript" src="js/beds.js?v=2"></script>
+
 </body>
 </html>

@@ -38,7 +38,8 @@
 
 		.logo-rrh {
 			width: 100%;
-			max-width: 150px;
+			max-width: 165px;
+			padding-right: 15px;
 
 			@media (max-width: 48.4375em) {
 				width: 140px;
@@ -46,8 +47,10 @@
 		}
 
 		.logo-partner {
-			max-height: 45px;
-			margin-left: 20px;
+			max-height: 40px;
+			padding-left: 15px;
+			border-left: 1px solid $grey-300;
+			filter: grayscale(100%) opacity(.5);
 		}
 	}
 

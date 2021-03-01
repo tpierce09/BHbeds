@@ -532,29 +532,27 @@ table {
         .rrh-footer__logo .logo-rrh {
           width: 140px; } }
     .rrh-footer__logo .logo-partner {
-      max-height: 40px;
+      max-height: 45px;
       padding-left: 15px;
-      border-left: 1px solid #e0e0e0;
-      filter: grayscale(100%) opacity(0.5); }
+      border-left: 1px solid #e0e0e0; }
   .rrh-footer__links {
     list-style-type: none;
     padding: 0px;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
+    align-items: center;
     position: relative;
     margin-top: 0;
     margin-bottom: 0; }
-    @media (max-width: 68.75em) {
-      .rrh-footer__links {
-        padding-top: 24px; } }
     @media (max-width: 48.4375em) {
       .rrh-footer__links {
-        max-width: 450px;
+        max-width: 300px;
         margin: auto;
-        justify-content: space-between;
+        justify-content: space-evenly;
         padding-top: 0;
-        padding-bottom: 30px; } }
+        padding-bottom: 30px;
+        flex-wrap: wrap; } }
     @media (max-width: 31.25em) {
       .rrh-footer__links {
         display: block;
@@ -579,7 +577,10 @@ table {
             left: -10px; } }
         @media (max-width: 48.4375em) {
           .rrh-footer__links li:before {
-            left: -7px; } }
+            left: -25px; } }
+        @media (max-width: 31.25em) {
+          .rrh-footer__links li:before {
+            content: ''; } }
       @media (max-width: 52.8125em) {
         .rrh-footer__links li {
           padding: 0 10px;
@@ -592,15 +593,10 @@ table {
         .rrh-footer__links li {
           padding: 0 5px; } }
     .rrh-footer__links li:first-of-type {
-      padding-left: 0px; }
+      padding-left: 0px;
+      text-align: right; }
       .rrh-footer__links li:first-of-type:before {
         content: ""; }
-      @media (max-width: 68.75em) {
-        .rrh-footer__links li:first-of-type {
-          position: absolute;
-          top: 0px;
-          right: 0px;
-          padding-right: 0px; } }
       @media (max-width: 48.4375em) {
         .rrh-footer__links li:first-of-type {
           top: auto;
@@ -609,9 +605,15 @@ table {
           text-align: center; } }
     .rrh-footer__links li:last-of-type {
       padding-right: 0px; }
+      @media (max-width: 48.4375em) {
+        .rrh-footer__links li:last-of-type {
+          padding-top: 15px; } }
     @media (max-width: 68.75em) {
       .rrh-footer__links li:nth-of-type(2):before {
         content: ""; } }
+    @media (max-width: 48.4375em) {
+      .rrh-footer__links li:nth-of-type(2) {
+        padding-top: 15px; } }
     .rrh-footer__links a {
       text-decoration: none;
       transition: none;

@@ -12,21 +12,7 @@
   	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
   	<script src="js/jquery.min.js?v=2"></script>
 	<script src="js/handlebars.js?v=2"></script>
-
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-6382893-31"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
-
-	  gtag('config', 'UA-6382893-31');
-	</script>
-
-	<script>
-		
-	</script>
  
-	 
 	<script id="item-template-desk" type="text/x-handlebars-template">
 		{{#each this as |organization|}}
 			<tr class="bed">
@@ -133,7 +119,7 @@
 					<img class="logo-partner" src="/media/RPC-logo.jpg" alt="">
 				</div>
 				<ul class="rrh-footer__links">
-					<li>© <span id="current-year">2021</span> Rochester Regional Health<br>Finger Lakes Regional Planning Consortium</li>
+					<li>© <span class="current-year"></span> Rochester Regional Health<br>Finger Lakes Regional Planning Consortium</li>
 					<li><a target="_blank" href="https://www.rochesterregional.org/privacy-notice" rel="noopener noreferrer">Privacy Policy</a></li>
 					<li><a target="_blank" href="https://www.rochesterregional.org/disclaimer" rel="noopener noreferrer">Disclaimer</a></li>
 				</ul>	

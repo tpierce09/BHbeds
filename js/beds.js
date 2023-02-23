@@ -60,7 +60,10 @@ searchFilter();
 $(window).resize(searchFilter);
 
 // get current year
-$('#currentYear').text(new Date().getFullYear());
+let n = 1;
+let tn = 2;
+let copyright = new Date().getFullYear();
+$('.current-year').html(copyright);
 
 
 // modals, sourced from https://github.com/cferdinandi/modals
